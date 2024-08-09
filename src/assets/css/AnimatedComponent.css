@@ -2,6 +2,8 @@
 
 .animated-container {
   margin-bottom: 100px;
+  height: fit-content;
+  width: 100%;
 }
 
 .animated-component {

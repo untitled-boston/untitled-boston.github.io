@@ -1,0 +1,18 @@
+.overview-container {
+  position: relative;
+  height: fit-content;
+  width: 100%;
+}
+
+.overview-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 2px solid white;
+  background-color: black;
+  padding: 10px;
+}
+
+.overview-title h1 {
+  margin: 0;
+}

@@ -37,7 +37,7 @@ const Scroller: React.FC<ScrollerProps> = ({ children, sectionNames }) => {
 
   return (
     <div className="scroller" ref={scrollerRef}>
-      <TickerContainer text="Wonderland 9/7 | Stamina 9/12 | Select Markets 4/12 |&nbsp;" />
+      <TickerContainer text="UNTITLED | Wonderland 9/7 | Stamina 9/13 | @UNTITLED.BOSTON | Select Markets 9/14 | Select Markets 4/12 |&nbsp;" />
       <div
         className={`button-container ${isExpanded ? "expanded" : "collapsed"}`}
       >
