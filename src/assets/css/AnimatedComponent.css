@@ -9,8 +9,6 @@
 .animated-component {
   opacity: 0;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-
-  border: 2px solid pink; /* For debugging visibility */
 }
 
 /* Slide-in from different directions */

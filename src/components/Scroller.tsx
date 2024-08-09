@@ -42,18 +42,14 @@ const Scroller: React.FC<ScrollerProps> = ({ children, sectionNames }) => {
         className={`button-container ${isExpanded ? "expanded" : "collapsed"}`}
       >
         <button className="toggle-button" onClick={toggleButtonContainer}>
-          <img
-            src="/assets/images/base.png"
-            alt="Scroll to Top"
-            className="scroll-to-top-img"
-          />
+          <img src="/assets/images/base.png" alt="" className="toggle-img" />
         </button>
 
         {isExpanded && (
           <div className="section-buttons">
             {children.map((child, index) => (
               <button key={index} onClick={() => handleScrollToSection(index)}>
-                {sectionNames[index]} {/* Display section name */}
+                <p> {sectionNames[index]}</p>
               </button>
             ))}
           </div>
