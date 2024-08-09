@@ -1,6 +1,13 @@
 import React, { ReactNode } from "react";
 import Scroller from "./components/Scroller";
 import AnimatedComponent from "./components/AnimatedComponent";
+import { Overview } from "./components/content/Overview";
+import { Operations } from "./components/content/Operations";
+import { Team } from "./components/content/Team";
+import { History } from "./components/content/History";
+import { Market } from "./components/content/Market";
+import { Oppurtunity } from "./components/content/Oppurtunity";
+import { Contact } from "./components/content/Contact";
 
 // Array of sections with components and their corresponding animations
 
@@ -18,38 +25,38 @@ type Section = {
 const sections: Section[] = [
   {
     name: "Overview",
-    component: <h1>Section 1: Slide in from Left</h1>,
-    animation: "slide-left",
-  },
-  {
-    name: "Market",
-    component: <h1>Section 2: Slide in from Right</h1>,
-    animation: "slide-right",
-  },
-  {
-    name: "Operations",
-    component: <h1>Section 3: Slide in from Top</h1>,
+    component: <Overview />,
     animation: "slide-top",
   },
   {
+    name: "Market",
+    component: <Market />,
+    animation: "fade-in",
+  },
+  {
+    name: "Operations",
+    component: <Operations />,
+    animation: "slide-left",
+  },
+  {
     name: "Team",
-    component: <h1>Section 4: Slide in from Bottom</h1>,
-    animation: "slide-bottom",
+    component: <Team />,
+    animation: "slide-right",
   },
   {
     name: "History",
-    component: <h1>Section 4: Slide in from Bottom</h1>,
+    component: <History />,
     animation: "slide-bottom",
   },
   {
     name: "Oppurtunity",
-    component: <h1>Section 5: Fade In</h1>,
+    component: <Oppurtunity />,
     animation: "fade-in",
   },
   {
     name: "Contact",
-    component: <h1>Section 5: Fade In</h1>,
-    animation: "fade-in",
+    component: <Contact />,
+    animation: "slide-bottom",
   },
 ];
 

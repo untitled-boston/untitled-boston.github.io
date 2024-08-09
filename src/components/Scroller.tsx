@@ -16,7 +16,7 @@ const Scroller: React.FC<ScrollerProps> = ({ children, sectionNames }) => {
 
   return (
     <div className="scroller">
-      <TickerContainer text="This is a constantly scrolling ticker text. Enjoy the smooth scrolling effect!&nbsp;" />
+      <TickerContainer text="Wonderland 9/7 | Stamina 9/12 | Select Markets 4/12 |&nbsp;" />
       <div
         className={`button-container ${isExpanded ? "expanded" : "collapsed"}`}
       >

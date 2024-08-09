@@ -7,8 +7,8 @@
 .animated-component {
   opacity: 0;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  background-color: black;
-  border: 2px solid white; /* For debugging visibility */
+
+  border: 2px solid pink; /* For debugging visibility */
 }
 
 /* Slide-in from different directions */

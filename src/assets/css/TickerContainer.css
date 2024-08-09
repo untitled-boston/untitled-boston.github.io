@@ -2,7 +2,8 @@
   overflow: hidden;
   white-space: nowrap;
   background-color: black; /* Background color of the ticker */
-  border: 2px solid #ccc; /* Border around the ticker */
+  border: 2px solid white; /* Border around the ticker */
+  color: white;
   position: relative;
   width: calc(100% - 110px);
   position: fixed;
