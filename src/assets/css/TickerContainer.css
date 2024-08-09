@@ -1,0 +1,34 @@
+.ticker-container {
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: black; /* Background color of the ticker */
+  border: 2px solid #ccc; /* Border around the ticker */
+  position: relative;
+  width: calc(100% - 110px);
+  position: fixed;
+  height: 50px;
+  font-weight: bolder;
+  z-index: 10;
+  margin-left: 70px;
+}
+
+.ticker,
+.ticker__element {
+  height: 100% !important;
+}
+
+.ticker__element {
+  display: flex;
+  align-items: center;
+}
+
+p {
+  margin: 0;
+}
+
+@media (min-width: 769px) {
+  .ticker-container {
+    width: calc(100% - 60px);
+    margin-left: 0px;
+  }
+}

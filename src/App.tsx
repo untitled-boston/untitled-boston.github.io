@@ -1,35 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { ReactNode } from "react";
+import Scroller from "./components/Scroller";
+import AnimatedComponent from "./components/AnimatedComponent";
 
-function App() {
-  const [count, setCount] = useState(0)
+// Array of sections with components and their corresponding animations
 
+type Section = {
+  name: string; // Add a name property for the section label
+  component: ReactNode;
+  animation:
+    | "slide-left"
+    | "slide-right"
+    | "slide-top"
+    | "slide-bottom"
+    | "fade-in";
+};
+
+const sections: Section[] = [
+  {
+    name: "Overview",
+    component: <h1>Section 1: Slide in from Left</h1>,
+    animation: "slide-left",
+  },
+  {
+    name: "Market",
+    component: <h1>Section 2: Slide in from Right</h1>,
+    animation: "slide-right",
+  },
+  {
+    name: "Operations",
+    component: <h1>Section 3: Slide in from Top</h1>,
+    animation: "slide-top",
+  },
+  {
+    name: "Team",
+    component: <h1>Section 4: Slide in from Bottom</h1>,
+    animation: "slide-bottom",
+  },
+  {
+    name: "History",
+    component: <h1>Section 4: Slide in from Bottom</h1>,
+    animation: "slide-bottom",
+  },
+  {
+    name: "Oppurtunity",
+    component: <h1>Section 5: Fade In</h1>,
+    animation: "fade-in",
+  },
+  {
+    name: "Contact",
+    component: <h1>Section 5: Fade In</h1>,
+    animation: "fade-in",
+  },
+];
+
+const sectionNames = sections.map((section) => section.name);
+
+const App: React.FC = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="app-container">
+      <div className="background" />
+      <Scroller sectionNames={sectionNames}>
+        {sections.map((section, index) => (
+          <AnimatedComponent key={index} animation={section.animation}>
+            {section.component}
+          </AnimatedComponent>
+        ))}
+      </Scroller>
+    </div>
+  );
+};
 
-export default App
+export default App;
