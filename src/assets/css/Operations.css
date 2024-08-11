@@ -270,8 +270,8 @@
     font-size: 1rem;
   }
 
-  .operations-point strong:not(.operations-point-title),
-  .operations-half strong:not(.operations-point-title) {
+  .operations-point strong,
+  .operations-half strong {
     color: #ff8400;
     font-weight: bolder;
   }
