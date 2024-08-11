@@ -162,8 +162,23 @@
 }
 
 @media (max-width: 768px) {
-  .operations-title {
-    margin-left: 10%;
+  .operations-content {
+    width: 100%;
+    padding: 0;
+    border: none;
+  }
+
+  .operations-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .operations-cards .operations-point p {
+    text-align: center !important;
+  }
+
+  .operations-cards .operations-point {
+    max-width: 100%;
   }
 
   .operations-title h1 {
