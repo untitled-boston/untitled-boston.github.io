@@ -18,7 +18,7 @@
   z-index: 2;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .market-title h1 {
@@ -53,8 +53,28 @@
 
 .market-cards {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-left: -40px;
+  width: 100vw;
+  padding-bottom: 40px;
+  gap: 6%;
+  -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer and Edge */
+  scrollbar-width: none;
+}
+
+.market-cards::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar for WebKit browsers */
+}
+
+.market-cards .market-point:first-child {
+  margin-left: 40px; /* Specific margin for the first child */
+}
+
+.market-cards .market-point:last-child {
+  margin-right: 40px; /* Specific margin for the last child */
 }
 
 .market-cards .market-point {
@@ -99,24 +119,5 @@
   .population-point {
     width: 100%;
     margin-left: 0;
-  }
-
-  .market-cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    margin-left: -40px;
-    width: 100vw;
-    padding-bottom: 40px;
-  }
-
-  .market-cards .market-point:first-child {
-    margin-left: 40px; /* Specific margin for the first child */
-  }
-
-  .market-cards .market-point:last-child {
-    margin-right: 40px; /* Specific margin for the last child */
   }
 }
