@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../assets/css/Scroller.css";
 import TickerContainer from "./TickerContainer";
 
@@ -34,6 +34,14 @@ const Scroller: React.FC<ScrollerProps> = ({ children, sectionNames }) => {
       setIsExpanded(false);
     }
   };
+
+  // Effect to reset scroll position to the top on component mount
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    if (scroller) {
+      scroller.scrollTo({ top: 0, behavior: "instant" });
+    }
+  }, []);
 
   return (
     <div className="scroller" ref={scrollerRef}>
