@@ -11,7 +11,3 @@
   font-size: 2rem;
   color: white; /* Adjust color as needed */
 }
-
-.star.inactive {
-  display: none;
-}
