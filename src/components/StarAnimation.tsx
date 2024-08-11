@@ -21,6 +21,7 @@ const StarAnimation = () => {
     "\u2605",
     "\u2606",
   ];
+
   const estimateProcessingPower = () => {
     const start = performance.now();
     for (let i = 0; i < 1e7; i++) {} // Simulate processing
@@ -35,6 +36,8 @@ const StarAnimation = () => {
       charIndex: 0,
       position: { top: "0px", left: "0px" },
       stayIntervals: Math.floor(Math.random() * 11), // Random number of intervals between 0-10
+      loopStart: Math.floor(Math.random() * starChars.length), // Random start index for looping
+      loopEnd: Math.floor(Math.random() * starChars.length), // Random end index for looping
     })
   );
 
@@ -43,10 +46,19 @@ const StarAnimation = () => {
       setStars((prevStars) =>
         prevStars.map((star) => {
           if (star.stayIntervals > 0) {
-            // If the star should stay in place, decrease the stayIntervals
+            // If the star should stay in place, decrease the stayIntervals and cycle through a subset of the starChars
+            const loopRange =
+              star.loopEnd > star.loopStart
+                ? star.loopEnd - star.loopStart
+                : starChars.length - star.loopStart + star.loopEnd;
+
+            const newCharIndex =
+              ((star.charIndex + 1) % loopRange) + star.loopStart;
+
             return {
               ...star,
               stayIntervals: star.stayIntervals - 1,
+              charIndex: newCharIndex,
             };
           } else {
             // Otherwise, move the star to a new position
@@ -61,6 +73,8 @@ const StarAnimation = () => {
                 charIndex: newCharIndex,
                 position: { top: newTop, left: newLeft },
                 stayIntervals: Math.floor(Math.random() * 11), // Reset stay intervals
+                loopStart: Math.floor(Math.random() * starChars.length), // Reset loop start
+                loopEnd: Math.floor(Math.random() * starChars.length), // Reset loop end
               };
             } else if (Math.random() > 0.95) {
               return {
@@ -68,12 +82,16 @@ const StarAnimation = () => {
                 charIndex: 0,
                 position: { top: newTop, left: newLeft },
                 stayIntervals: Math.floor(Math.random() * 11), // Reset stay intervals
+                loopStart: Math.floor(Math.random() * starChars.length), // Reset loop start
+                loopEnd: Math.floor(Math.random() * starChars.length), // Reset loop end
               };
             }
             return {
               ...star,
               position: { top: newTop, left: newLeft },
               stayIntervals: Math.floor(Math.random() * 11), // Reset stay intervals
+              loopStart: Math.floor(Math.random() * starChars.length), // Reset loop start
+              loopEnd: Math.floor(Math.random() * starChars.length), // Reset loop end
             };
           }
         })
