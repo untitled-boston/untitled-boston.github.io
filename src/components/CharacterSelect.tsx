@@ -56,6 +56,7 @@ export const CharacterSelect: React.FC = () => {
         ))}
       </div>
       <div className="character-info-container">
+        <div className="character-info-background"></div>
         {selectedCharacter && (
           <div className="character-info">
             <h1>{selectedCharacter.name}</h1>

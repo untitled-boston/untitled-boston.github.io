@@ -17,7 +17,7 @@ export const Team = () => {
           </p>
         </div>
         <CharacterSelect />
-        <div className="team-point">
+        <div className="team-point team-info">
           <p>
             We collaborate with startup event companies in Boston, such as{" "}
             <strong>Stamina Boston</strong>, and fashion groups like{" "}

@@ -12,7 +12,7 @@ export const Operations = () => {
       <div
         className="operations-title-container"
         style={{
-          borderColor: isHovered ? "#32cd32" : "#fff",
+          borderColor: isHovered ? "#007BFF" : "#fff",
         }}
       >
         <div className="operations-title">
@@ -21,14 +21,14 @@ export const Operations = () => {
         <div
           className="operations-title-banner"
           style={{
-            backgroundColor: isHovered ? "#32cd32" : "#fff",
+            backgroundColor: isHovered ? "#007BFF" : "#fff",
           }}
         ></div>
       </div>
       <div
         className="operations-content"
         style={{
-          borderColor: isHovered ? "#32cd32" : "#fff",
+          borderColor: isHovered ? "#007BFF" : "#fff",
         }}
       >
         <div
@@ -86,7 +86,7 @@ export const Operations = () => {
           <div
             className="operations-point-banner"
             style={{
-              backgroundColor: isHovered ? "#32cd32" : "#fff",
+              backgroundColor: isHovered ? "#007BFF" : "#fff",
             }}
           ></div>
 

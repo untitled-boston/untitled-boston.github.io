@@ -44,7 +44,8 @@
 
 .operations-title {
   position: relative;
-  border: 2px solid #fff;
+  border: 2px solid #ff8400;
+  color: #ff8400;
   background-color: #000;
   padding: 6px 20px;
   height: 80px;
@@ -102,7 +103,8 @@
   flex: 1;
 }
 
-.operations-point p {
+.operations-point p,
+.operations-half p {
   margin: 0;
   font-size: 1.1rem;
 }
@@ -159,12 +161,12 @@
 @media (min-width: 769px) {
   .operations-point:hover {
     background-color: white;
-    border-color: #32cd32;
+    border-color: #007bff;
     color: black;
   }
 
   .operations-point:hover strong {
-    color: green;
+    color: #ff8400;
     font-weight: bolder;
   }
 
@@ -174,7 +176,7 @@
   }
 
   .operations-split:hover {
-    border-color: #32cd32;
+    border-color: #007bff;
   }
 
   .operations-half:hover {
@@ -183,15 +185,15 @@
   }
 
   .operations-half:hover strong {
-    color: green;
+    color: #ff8400;
   }
 
   .operations-half:hover#we-come-to-you {
-    border-left: 16px solid #32cd32;
+    border-left: 16px solid #007bff;
   }
 
   .operations-half:hover#you-come-to-us {
-    border-right: 16px solid #32cd32;
+    border-right: 16px solid #007bff;
   }
 }
 
@@ -270,7 +272,7 @@
 
   .operations-point strong:not(.operations-point-title),
   .operations-half strong:not(.operations-point-title) {
-    color: green;
+    color: #ff8400;
     font-weight: bolder;
   }
 

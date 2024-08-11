@@ -10,7 +10,7 @@
 
 .team-title {
   position: relative;
-  border: 2px solid #fff;
+  border: 2px solid #ff007f;
   background-color: #000;
   padding: 6px 20px;
   height: 80px;
@@ -40,8 +40,11 @@
   transition: background-color 0.3s ease, border-color 0.3s ease,
     border-left 0.3s ease, border-right 0.3s ease;
   flex: 1;
-  border-left: 2px solid;
-  border-right: 2px solid;
+  width: 80%;
+}
+
+.team-info {
+  margin-left: auto;
 }
 
 .team-point p {
@@ -50,7 +53,7 @@
 }
 
 .team-point strong {
-  color: white;
+  color: #ff007f;
   font-weight: bold;
 }
 
@@ -76,7 +79,7 @@
   }
 
   .team-point strong {
-    color: green;
+    color: #ff8400;
     font-weight: bolder;
   }
 }

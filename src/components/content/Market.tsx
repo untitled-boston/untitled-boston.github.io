@@ -11,7 +11,7 @@ export const Market = () => {
           <p>
             With over <strong>250,000</strong> people, more than{" "}
             <strong>1 in 3</strong> Bostonians are between the ages of{" "}
-            <strong>18 & 34</strong>. These young adults represent a{" "}
+            <strong>18 and 34</strong>. These young adults represent a{" "}
             <strong>lucrative</strong>, <strong>untapped</strong> {""} market.
             Our recent social media survey revealed:
           </p>
