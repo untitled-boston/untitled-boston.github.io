@@ -95,18 +95,22 @@
 }
 
 @media (min-width: 769px) {
-  .market-point:hover {
+  .market-point:hover:not(.population-point) {
     background-color: white;
     border-color: #32cd32;
-    color: black;
   }
 
-  .market-point:hover strong {
+  .market-point:hover:not(.population-point) strong {
     color: green;
     font-weight: bolder;
   }
 
+  .market-point:hover:not(.population-point) p {
+    color: black;
+  }
+
   .market-point:hover .market-point-title {
+    color: green;
     text-decoration: underline;
   }
 }

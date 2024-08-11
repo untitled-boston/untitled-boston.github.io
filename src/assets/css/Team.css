@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   margin-bottom: -10px;
-  margin-left: 15%;
+  margin-left: 5%;
 }
 
 .team-title h1 {
@@ -40,7 +40,6 @@
   transition: background-color 0.3s ease, border-color 0.3s ease,
     border-left 0.3s ease, border-right 0.3s ease;
   flex: 1;
-  min-width: 200px;
   border-left: 2px solid;
   border-right: 2px solid;
 }
@@ -56,21 +55,11 @@
 }
 
 .intro-point {
+  height: 100px;
+  width: 45%;
+  margin-bottom: -200px;
   border-left: 8px solid;
   border-right: 8px solid;
-}
-
-@media (min-width: 769px) {
-  .team-point:hover {
-    background-color: white;
-    border-color: #32cd32;
-    color: black;
-  }
-
-  .team-point:hover strong {
-    color: green;
-    font-weight: bolder;
-  }
 }
 
 @media (max-width: 768px) {

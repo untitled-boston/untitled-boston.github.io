@@ -11,7 +11,7 @@ interface Character {
 
 const characters: Character[] = [
   {
-    title: "President of Busienss Development",
+    title: "President of Business Development",
     name: "Jeff D. Jeffries",
     photo: "/path/to/john-doe.jpg",
     description:

@@ -1,7 +1,7 @@
 .character-select-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: end;
   margin: 20px 0;
   gap: 20px;
   height: 400px;
@@ -16,6 +16,7 @@
 }
 
 .character-button {
+  height: 60px;
   padding: 10px 20px;
   border: 2px solid #fff;
   background-color: #000;
@@ -31,6 +32,7 @@
   background-color: white;
   border-color: #32cd32;
   color: black;
+  font-weight: bolder;
 }
 
 .character-info-container {

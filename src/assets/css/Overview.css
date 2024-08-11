@@ -52,6 +52,8 @@
   margin-top: -60px;
   width: 90%;
   border: 2px solid white;
+  border-left: 8px solid;
+  border-right: 8px solid;
   background-color: black;
   z-index: 2;
   padding: 10px 20px;
