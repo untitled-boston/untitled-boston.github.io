@@ -16,7 +16,7 @@
   border: 2px solid white;
   background-color: black;
   padding: 6px 20px;
-  height: 80px;
+  height: fit-content;
   width: fit-content;
   z-index: 2;
   display: flex;
