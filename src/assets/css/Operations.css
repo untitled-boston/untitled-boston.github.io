@@ -141,7 +141,7 @@
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   border-left: 0px solid;
   border-right: 0px solid;
 }
@@ -246,5 +246,20 @@
   .overview-point {
     width: 100%;
     margin-left: 0;
+  }
+
+  .operations-content p {
+    font-size: 1rem;
+  }
+
+  .operations-point strong:not(.operations-point-title),
+  .operations-half strong:not(.operations-point-title) {
+    color: green;
+    font-weight: bolder;
+  }
+
+  .operations-point .operations-point-title,
+  .operations-half .operations-point-title {
+    text-decoration: underline;
   }
 }

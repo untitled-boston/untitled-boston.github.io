@@ -94,10 +94,6 @@
   font-weight: bold;
 }
 
-.market-point:hover .market-point-title {
-  text-decoration: underline;
-}
-
 @media (min-width: 769px) {
   .market-point:hover {
     background-color: white;
@@ -108,6 +104,10 @@
   .market-point:hover strong {
     color: green;
     font-weight: bolder;
+  }
+
+  .market-point:hover .market-point-title {
+    text-decoration: underline;
   }
 }
 
@@ -123,5 +123,18 @@
   .population-point {
     width: 100%;
     margin-left: 0;
+  }
+
+  .market-content p {
+    font-size: 1rem;
+  }
+
+  .market-point strong:not(.market-point-title) {
+    color: green;
+    font-weight: bolder;
+  }
+
+  .market-point-title {
+    text-decoration: underline;
   }
 }
