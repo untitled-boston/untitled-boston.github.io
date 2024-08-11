@@ -34,8 +34,8 @@ const characters: Character[] = [
 ];
 
 export const CharacterSelect: React.FC = () => {
-  const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(
-    null
+  const [selectedCharacter, setSelectedCharacter] = useState<Character>(
+    characters[0]
   );
 
   const handleCharacterClick = (character: Character) => {
@@ -55,19 +55,21 @@ export const CharacterSelect: React.FC = () => {
           </button>
         ))}
       </div>
-      {selectedCharacter && (
-        <div className="character-info">
-          <h1>{selectedCharacter.name}</h1>
-          <img
-            src={selectedCharacter.photo}
-            alt={selectedCharacter.name}
-            className="character-photo"
-          />
-          <p className="character-description">
-            {selectedCharacter.description}
-          </p>
-        </div>
-      )}
+      <div className="character-info-container">
+        {selectedCharacter && (
+          <div className="character-info">
+            <h1>{selectedCharacter.name}</h1>
+            <img
+              src={selectedCharacter.photo}
+              alt={selectedCharacter.name}
+              className="character-photo"
+            />
+            <p className="character-description">
+              {selectedCharacter.description}
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
