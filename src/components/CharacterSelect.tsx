@@ -61,12 +61,13 @@ export const CharacterSelect: React.FC = () => {
       <div className="character-info-container">
         <div className="character-info">
           <div className="front">
-            <h1>{selectedCharacter.name}</h1>
             <img
               src={selectedCharacter.photo}
               alt={selectedCharacter.name}
               className="character-photo"
             />
+            <h2>{selectedCharacter.title}</h2>
+            <h1>{selectedCharacter.name}</h1>
           </div>
           <div className="back">
             <p className="character-description">
