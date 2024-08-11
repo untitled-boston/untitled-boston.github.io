@@ -12,7 +12,7 @@ export const Overview = () => {
       <div className="overview-content">
         <p>
           Discover how you can connect with the Underground scene of Boston
-          through immersive experiences in music, fashion, and art that resonate
+          through immersive experiences in art, fashion, and music that resonate
           deeply with Boston's young adult market.
         </p>
       </div>

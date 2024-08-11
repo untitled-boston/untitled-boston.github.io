@@ -1,0 +1,93 @@
+.team-container {
+  position: relative;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.team-title {
+  position: relative;
+  border: 2px solid #fff;
+  background-color: #000;
+  padding: 6px 20px;
+  height: 80px;
+  width: fit-content;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  margin-bottom: -10px;
+  margin-left: 15%;
+}
+
+.team-title h1 {
+  font-size: 2rem;
+  white-space: nowrap;
+}
+
+.team-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.team-point {
+  background-color: black;
+  padding: 15px;
+  border: 2px solid #fff;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    border-left 0.3s ease, border-right 0.3s ease;
+  flex: 1;
+  min-width: 200px;
+  border-left: 2px solid;
+  border-right: 2px solid;
+}
+
+.team-point p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.team-point strong {
+  color: white;
+  font-weight: bold;
+}
+
+.intro-point {
+  border-left: 8px solid;
+  border-right: 8px solid;
+}
+
+@media (min-width: 769px) {
+  .team-point:hover {
+    background-color: white;
+    border-color: #32cd32;
+    color: black;
+  }
+
+  .team-point:hover strong {
+    color: green;
+    font-weight: bolder;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-title {
+    margin-left: 50%;
+    translate: -50%;
+  }
+  .team-title h1 {
+    font-size: 1rem;
+  }
+
+  .team-content p {
+    font-size: 1rem;
+  }
+
+  .team-point strong {
+    color: green;
+    font-weight: bolder;
+  }
+}

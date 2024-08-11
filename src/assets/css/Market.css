@@ -72,11 +72,11 @@
 }
 
 .market-cards .market-point:first-child {
-  margin-left: 40px; /* Specific margin for the first child */
+  margin-left: 10%; /* Specific margin for the first child */
 }
 
 .market-cards .market-point:last-child {
-  margin-right: 40px; /* Specific margin for the last child */
+  margin-right: 10%; /* Specific margin for the last child */
 }
 
 .market-cards .market-point {

@@ -64,7 +64,7 @@ export const Operations = () => {
                   We Come to You
                 </strong>
                 :<br />
-                Partnering with established venues to{" "}
+                Partnering with business & venues to{" "}
                 <strong>increase foot traffic</strong> and{" "}
                 <strong>brand visibility</strong>.
               </p>
@@ -75,8 +75,9 @@ export const Operations = () => {
                   You Come to Us
                 </strong>
                 :<br />
-                Providing a <strong>creative space</strong> in Roxbury for
-                artists and hosting <strong>private events</strong>.
+                Providing a <strong>creative space</strong> to strengthen the{" "}
+                <strong> arts</strong>, <strong> fashion</strong>, and{" "}
+                <strong> music</strong> community of Boston.
               </p>
             </div>
           </div>
@@ -89,30 +90,25 @@ export const Operations = () => {
                   Strategic Partnerships
                 </strong>
                 :<br />
-                Collaborating with Boston startups and fashion groups to{" "}
+                Collaborating with local art, fashion, and music startups to{" "}
                 <strong>expand reach</strong> and drive <strong>success</strong>
                 .
               </p>
             </div>
+            <div
+              className="operations-point-banner"
+              style={{
+                backgroundColor: isHovered ? "#32cd32" : "#fff",
+              }}
+            ></div>
             <div className="operations-point">
               <p>
                 <strong className="operations-point-title">Vision</strong>:
                 <br />
                 Aspiring to create a <strong>
                   cultural movement
-                </strong> that <strong>surpasses</strong> established brands
-                like Boiler Room and Insomniac.
-              </p>
-            </div>
-            <div className="operations-point">
-              <p>
-                <strong className="operations-point-title">
-                  Diversified Approach
-                </strong>
-                :<br />
-                Mitigating risk by opening multiple{" "}
-                <strong>revenue streams</strong> and ensuring{" "}
-                <strong>scalability</strong>.
+                </strong> that <strong>surpasses</strong> establishments like
+                Boiler Room, Insomniac, or Mischief.
               </p>
             </div>
           </div>
