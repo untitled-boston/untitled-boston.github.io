@@ -59,7 +59,6 @@
   overflow-y: hidden;
   margin-left: -40px;
   width: 100vw;
-  padding-bottom: 40px;
   gap: 6%;
   -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer and Edge */
   scrollbar-width: none;

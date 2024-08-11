@@ -1,4 +1,3 @@
-import React from "react";
 import "../../assets/css/Market.css";
 
 export const Market = () => {

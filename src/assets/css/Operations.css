@@ -1,0 +1,172 @@
+.operations-container {
+  position: relative;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.operations-title {
+  position: relative;
+  border: 2px solid #fff;
+  background-color: #000;
+  padding: 6px 20px;
+  height: 80px;
+  width: fit-content;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.operations-title h1 {
+  font-size: 2rem;
+}
+
+.operations-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  padding: 20px;
+  border: 2px solid #fff;
+}
+
+.overview-point {
+  background-color: black;
+  padding: 15px;
+  border: 2px solid #fff;
+  border-left: 8px solid white;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  text-align: center;
+}
+
+.operations-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.operations-cards .operations-point p {
+  text-align: center;
+}
+
+.operations-cards .operations-point:first-child p {
+  text-align: right;
+}
+
+.operations-cards .operations-point:last-child p {
+  text-align: left;
+}
+
+.operations-cards .operations-point {
+  max-width: calc(33% - 10px);
+}
+
+.operations-point {
+  background-color: black;
+  padding: 15px;
+  border: 2px solid #fff;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  flex: 1;
+}
+
+.operations-point:hover {
+  background-color: white;
+  border-color: #32cd32;
+  color: black;
+}
+
+.operations-point p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.operations-point strong {
+  color: white;
+  font-weight: bold;
+}
+
+.operations-point:hover strong {
+  color: green;
+  font-weight: bolder;
+}
+
+.operations-point:hover .operations-point-title,
+.operations-half:hover .operations-point-title {
+  text-decoration: underline;
+}
+
+/* Specific styles for the split card */
+.operations-split {
+  display: flex;
+  border: 2px solid #fff;
+  overflow: hidden;
+}
+
+.operations-split:hover {
+  border-color: #32cd32;
+}
+
+#we-come-to-you {
+  text-align: right;
+  border-right: 1px solid #fff;
+}
+
+#you-come-to-us {
+  text-align: left;
+  border-left: 1px solid #fff;
+}
+
+.operations-half {
+  flex: 1;
+  padding: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-left 0.3s ease,
+    border-right 0.3s;
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 0px solid;
+  border-right: 0px solid;
+}
+
+.operations-half:hover {
+  background-color: white;
+  color: black;
+}
+
+.operations-half:hover p {
+  color: green;
+}
+
+.operations-half:hover#we-come-to-you {
+  border-left: 16px solid #32cd32;
+}
+
+.operations-half:hover#you-come-to-us {
+  border-right: 16px solid #32cd32;
+}
+
+@media (max-width: 768px) {
+  .operations-title {
+    margin-left: 10%;
+  }
+
+  .operations-title h1 {
+    font-size: 1rem;
+  }
+
+  .overview-point {
+    width: 100%;
+    margin-left: 0;
+  }
+}
