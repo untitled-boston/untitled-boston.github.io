@@ -38,6 +38,7 @@
   width: 80%;
   padding: 20px;
   border: 2px solid #fff;
+  transition: border-color 0.3s ease;
 }
 
 .overview-point {
