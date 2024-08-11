@@ -10,6 +10,10 @@
   align-items: center;
 }
 
+.operations-container * {
+  user-select: none;
+}
+
 .operations-title {
   position: relative;
   border: 2px solid #fff;
