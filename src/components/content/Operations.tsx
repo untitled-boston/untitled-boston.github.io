@@ -22,8 +22,21 @@ export const Operations = () => {
 
   return (
     <div className="operations-container">
-      <div className="operations-title">
-        <h1>How We Operate</h1>
+      <div
+        className="operations-title-container"
+        style={{
+          borderColor: isHovered ? "#32cd32" : "#fff",
+        }}
+      >
+        <div className="operations-title">
+          <h1>How We Operate</h1>
+        </div>
+        <div
+          className="operations-title-banner"
+          style={{
+            backgroundColor: isHovered ? "#32cd32" : "#fff",
+          }}
+        ></div>
       </div>
       <div
         className="operations-content"
