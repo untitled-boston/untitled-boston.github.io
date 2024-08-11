@@ -48,6 +48,7 @@
   padding: 15px;
   border: 2px solid #fff;
   border-left: 8px solid white;
+  border-right: 8px solid white;
   transition: background-color 0.3s ease, border-color 0.3s ease;
   margin-bottom: 20px;
   margin-left: 10%;
@@ -109,10 +110,6 @@
 }
 
 @media (max-width: 768px) {
-  .population-point {
-    border-right: 8px solid white;
-  }
-
   .market-title {
     margin-left: 50%;
     translate: -50%;
