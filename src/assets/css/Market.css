@@ -84,12 +84,6 @@
   border-top: 16px solid white;
 }
 
-.market-point:hover {
-  background-color: white;
-  border-color: #32cd32;
-  color: black;
-}
-
 .market-point p {
   margin: 0;
   font-size: 1.1rem;
@@ -100,13 +94,21 @@
   font-weight: bold;
 }
 
-.market-point:hover strong {
-  color: green;
-  font-weight: bolder;
-}
-
 .market-point:hover .market-point-title {
   text-decoration: underline;
+}
+
+@media (min-width: 769px) {
+  .market-point:hover {
+    background-color: white;
+    border-color: #32cd32;
+    color: black;
+  }
+
+  .market-point:hover strong {
+    color: green;
+    font-weight: bolder;
+  }
 }
 
 @media (max-width: 768px) {

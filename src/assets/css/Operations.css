@@ -102,12 +102,6 @@
   flex: 1;
 }
 
-.operations-point:hover {
-  background-color: white;
-  border-color: #32cd32;
-  color: black;
-}
-
 .operations-point p {
   margin: 0;
   font-size: 1.1rem;
@@ -118,16 +112,6 @@
   font-weight: bold;
 }
 
-.operations-point:hover strong {
-  color: green;
-  font-weight: bolder;
-}
-
-.operations-point:hover .operations-point-title,
-.operations-half:hover .operations-point-title {
-  text-decoration: underline;
-}
-
 /* Specific styles for the split card */
 .operations-split {
   display: flex;
@@ -135,16 +119,14 @@
   overflow: hidden;
 }
 
-.operations-split:hover {
-  border-color: #32cd32;
-}
-
 #we-come-to-you {
+  width: 50%;
   text-align: right;
   border-right: 1px solid #fff;
 }
 
 #you-come-to-us {
+  width: 50%;
   text-align: left;
   border-left: 1px solid #fff;
 }
@@ -164,36 +146,84 @@
   border-right: 0px solid;
 }
 
-.operations-half:hover {
-  background-color: white;
-  color: black;
-}
+@media (min-width: 769px) {
+  .operations-point:hover {
+    background-color: white;
+    border-color: #32cd32;
+    color: black;
+  }
 
-.operations-half:hover p {
-  color: green;
-}
+  .operations-point:hover strong {
+    color: green;
+    font-weight: bolder;
+  }
 
-.operations-half:hover#we-come-to-you {
-  border-left: 16px solid #32cd32;
-}
+  .operations-point:hover .operations-point-title,
+  .operations-half:hover .operations-point-title {
+    text-decoration: underline;
+  }
 
-.operations-half:hover#you-come-to-us {
-  border-right: 16px solid #32cd32;
+  .operations-split:hover {
+    border-color: #32cd32;
+  }
+
+  .operations-half:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .operations-half:hover p {
+    color: green;
+  }
+
+  .operations-half:hover#we-come-to-you {
+    border-left: 16px solid #32cd32;
+  }
+
+  .operations-half:hover#you-come-to-us {
+    border-right: 16px solid #32cd32;
+  }
 }
 
 @media (max-width: 768px) {
+  .operations-title-banner {
+    width: 0%;
+    margin-left: 0;
+    flex-grow: 0;
+  }
+
   .operations-container {
     align-items: center;
   }
 
+  .operations-title-container {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .operations-mobile-background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    mix-blend-mode: difference;
+    z-index: -1;
+    flex-grow: 0;
+  }
+
   .operations-title {
     margin-left: 0;
+    margin-bottom: 20px;
   }
 
   .operations-content {
     width: 100%;
-    padding: 0;
-    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
   }
 
   .operations-cards {

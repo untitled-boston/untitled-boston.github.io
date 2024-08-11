@@ -9,7 +9,7 @@ interface HoverableProps {
 const Hoverable: React.FC<HoverableProps> = ({ onHoverChange, children }) => {
   return (
     <div
-      onMouseEnter={() => onHoverChange(true)}
+      onMouseEnter={() => onHoverChange(true && window.innerWidth >= 769)}
       onMouseLeave={() => onHoverChange(false)}
     >
       {children}
@@ -18,10 +18,14 @@ const Hoverable: React.FC<HoverableProps> = ({ onHoverChange, children }) => {
 };
 
 export const Operations = () => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
 
   return (
     <div className="operations-container">
+      {!(window.innerWidth >= 769) && (
+        <div className="operations-mobile-background"></div>
+      )}
+
       <div
         className="operations-title-container"
         style={{

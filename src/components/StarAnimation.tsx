@@ -52,7 +52,7 @@ const StarAnimation: React.FC = () => {
     const power = estimateProcessingPower();
     const adjustedStars = Math.max(
       10,
-      Math.min(Math.floor((power / 50) * 100), 100)
+      Math.min(Math.floor((power / 50) * 100), 50)
     );
 
     console.log("Calculated number of stars: " + adjustedStars);
