@@ -32,12 +32,12 @@ const sections: Section[] = [
   {
     name: "Market",
     component: <Market />,
-    animation: "fade-in",
+    animation: "slide-left",
   },
   {
     name: "Operations",
     component: <Operations />,
-    animation: "slide-left",
+    animation: "fade-in",
   },
   {
     name: "Team",

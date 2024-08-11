@@ -18,11 +18,13 @@
   z-index: 2;
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: -10px;
+  margin-left: 15%;
 }
 
 .market-title h1 {
   font-size: 2rem;
+  white-space: nowrap;
 }
 
 .market-content {
@@ -107,10 +109,14 @@
 }
 
 @media (max-width: 768px) {
-  .market-title {
-    margin-left: 10%;
+  .population-point {
+    border-right: 8px solid white;
   }
 
+  .market-title {
+    margin-left: 50%;
+    translate: -50%;
+  }
   .market-title h1 {
     font-size: 1rem;
   }

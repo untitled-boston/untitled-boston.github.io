@@ -6,8 +6,6 @@
   flex-direction: column;
   color: #fff;
   box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
 }
 
 .operations-container * {
@@ -25,6 +23,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  margin-left: 10%;
 }
 
 .operations-title h1 {
@@ -35,7 +34,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
   padding: 20px;
   border: 2px solid #fff;
   transition: border-color 0.3s ease;
@@ -162,6 +162,14 @@
 }
 
 @media (max-width: 768px) {
+  .operations-container {
+    align-items: center;
+  }
+
+  .operations-title {
+    margin-left: 0;
+  }
+
   .operations-content {
     width: 100%;
     padding: 0;
