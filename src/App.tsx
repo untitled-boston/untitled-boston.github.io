@@ -8,6 +8,7 @@ import { History } from "./components/content/History";
 import { Market } from "./components/content/Market";
 import { Oppurtunity } from "./components/content/Oppurtunity";
 import { Contact } from "./components/content/Contact";
+import StarAnimation from "./components/StarAnimation";
 
 // Array of sections with components and their corresponding animations
 
@@ -66,6 +67,7 @@ const App: React.FC = () => {
   return (
     <div className="app-container">
       <div className="background" />
+      <StarAnimation />
       <Scroller sectionNames={sectionNames}>
         {sections.map((section, index) => (
           <AnimatedComponent key={index} animation={section.animation}>

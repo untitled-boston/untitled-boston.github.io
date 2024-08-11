@@ -1,0 +1,17 @@
+.star-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  font-size: 2rem;
+  color: white; /* Adjust color as needed */
+}
+
+.star.inactive {
+  display: none;
+}

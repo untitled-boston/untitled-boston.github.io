@@ -1,5 +1,11 @@
-import React from "react";
+import "../../assets/css/Market.css";
 
 export const Market = () => {
-  return <div>Market</div>;
+  return (
+    <div className="market-container">
+      <div className="market-title">
+        <h1>Boston Market</h1>
+      </div>
+    </div>
+  );
 };
