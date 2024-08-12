@@ -9,6 +9,7 @@
   z-index: -1;
   transform: translateZ(0); /* Trigger hardware acceleration */
   background-color: black;
+  opacity: 0.8;
 }
 
 .star {

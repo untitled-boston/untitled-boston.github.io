@@ -1,6 +1,35 @@
+import React, { useRef } from "react";
 import "../../assets/css/Market.css";
 
 export const Market = () => {
+  const marketCardsRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    const target = marketCardsRef.current;
+    if (!target) return;
+
+    target.style.cursor = "grabbing"; // Change cursor style when dragging
+    target.style.userSelect = "none"; // Prevent text selection during drag
+
+    let startX = e.pageX - target.offsetLeft;
+    let scrollLeft = target.scrollLeft;
+
+    const handleMouseMove = (moveEvent: MouseEvent) => {
+      const x = moveEvent.pageX - target.offsetLeft;
+      const walk = (x - startX) * 2; // Multiplied for faster scrolling
+      target.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+      target.style.cursor = "grab"; // Revert cursor style after dragging
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+  };
+
   return (
     <div className="market-container">
       <div className="market-title">
@@ -16,7 +45,12 @@ export const Market = () => {
             Our recent social media survey revealed:
           </p>
         </div>
-        <div className="market-cards">
+        <div
+          className="market-cards"
+          ref={marketCardsRef}
+          onMouseDown={handleMouseDown}
+          style={{ cursor: "grab" }} /* Initial cursor style */
+        >
           <div className="market-point">
             <p>
               <strong className="market-point-title">Event Attendance</strong>:

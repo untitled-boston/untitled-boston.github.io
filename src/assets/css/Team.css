@@ -1,8 +1,9 @@
 .team-container {
   position: relative;
   height: fit-content;
-  width: 100%;
+  width: 80%;
   display: flex;
+  transform: translateX(10%);
   flex-direction: column;
   color: #fff;
   box-sizing: border-box;

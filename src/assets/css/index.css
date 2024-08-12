@@ -28,6 +28,7 @@
   background-repeat: no-repeat;
   mix-blend-mode: difference;
   z-index: 0;
+  opacity: 0.6;
 }
 
 body,
