@@ -1,21 +1,13 @@
-import React, { ReactNode, useRef } from "react";
-import { Overview } from "./components/content/Overview";
-import { Operations } from "./components/content/Operations";
-import { Team } from "./components/content/Team";
-import { History } from "./components/content/History";
-import { Market } from "./components/content/Market";
-import { Oppurtunity } from "./components/content/Oppurtunity";
-import { Contact } from "./components/content/Contact";
+import React from "react";
 import StarAnimation from "./components/StarAnimation";
 import TickerContainer from "./components/TickerContainer";
 import Sections from "./components/Sections";
+import CustomCursor from "./components/CustomCursor";
 
 const App: React.FC = () => {
-  // Create a ref to be passed to the Scroller and StarAnimation components
-  const scrollerRef = useRef<HTMLDivElement>(null);
-
   return (
     <div className="app-container">
+      <CustomCursor />
       <div className="background" />
       <StarAnimation />
       <div className="content-container">

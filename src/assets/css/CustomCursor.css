@@ -1,0 +1,37 @@
+#pointer {
+  content: "";
+  background-color: #ff007f;
+  transform: rotate(45deg);
+  position: absolute;
+  z-index: 100;
+  display: block;
+  outline-color: #ff007f;
+  outline-style: solid;
+  outline-width: 2px;
+  animation: cursor 1s infinite;
+  box-shadow: 0px 0px 20px #ff007f;
+  pointer-events: none;
+  mix-blend-mode: hard-light;
+}
+
+#panner {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: lighten(#ff007f, 10%);
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+  margin: 3em auto;
+}
+
+@keyframes cursor {
+  from {
+    outline-offset: 0px;
+  }
+  to {
+    outline-offset: 10px;
+    outline-color: transparent;
+  }
+}

@@ -24,10 +24,6 @@
   overflow: hidden;
 }
 
-.section:not(#section-preview) {
-  cursor: pointer;
-}
-
 .sections-top {
   height: calc(2 * (min(28vw, 28vh)) + 20px);
   width: 100%;
@@ -118,7 +114,6 @@
 .expand {
   height: 100% !important;
   width: 100% !important;
-  cursor: auto;
 }
 
 .expandable {
@@ -150,7 +145,6 @@
   position: relative;
   border: 2px solid white;
   background-color: black;
-  cursor: pointer;
   z-index: 1;
   user-select: none;
 }
