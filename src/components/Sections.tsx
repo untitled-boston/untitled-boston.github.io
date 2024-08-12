@@ -185,7 +185,7 @@ const Sections: React.FC = () => {
     preview?.classList.add("shrink-vertical");
     bottomLeft?.classList.add("shrink-horizontal");
     bottomMiddle?.classList.add("shrink-horizontal");
-    sectionsBottom?.classList.add("shrink-right");
+    sectionsBottom?.classList.add("shrink-end");
     sectionsVertical?.classList.add("shrink-start");
 
     setCurrentSection("bottom-right");
@@ -297,7 +297,6 @@ const Sections: React.FC = () => {
     backButtom?.classList.remove("enabled");
 
     setTimeout(() => {
-      sectionsBottom?.classList.remove("expand");
       topLeft?.classList.remove("shrink-vertical");
       middleLeft?.classList.remove("shrink-vertical");
       preview?.classList.remove("shrink-vertical");
@@ -333,7 +332,6 @@ const Sections: React.FC = () => {
     backButtom?.classList.remove("enabled");
 
     setTimeout(() => {
-      sectionsBottom?.classList.remove("expand");
       topLeft?.classList.remove("shrink-vertical");
       middleLeft?.classList.remove("shrink-vertical");
       preview?.classList.remove("shrink-vertical");
@@ -369,13 +367,12 @@ const Sections: React.FC = () => {
     backButtom?.classList.remove("enabled");
 
     setTimeout(() => {
-      sectionsBottom?.classList.remove("expand");
       topLeft?.classList.remove("shrink-vertical");
       middleLeft?.classList.remove("shrink-vertical");
       preview?.classList.remove("shrink-vertical");
       bottomLeft?.classList.remove("shrink-horizontal");
       bottomMiddle?.classList.remove("shrink-horizontal");
-      sectionsBottom?.classList.remove("shrink-right");
+      sectionsBottom?.classList.remove("shrink-end");
       sectionsVertical?.classList.remove("shrink-start");
     }, 500);
   };
@@ -417,12 +414,18 @@ const Sections: React.FC = () => {
             className="section expandable"
             id="section-top-left"
             onClick={handleTopLeft}
-          ></div>
+          >
+            <div className="section-background"></div>
+            <p className="section-title">What We Do</p>
+          </div>
           <div
             className="section expandable"
             id="section-middle-left"
             onClick={handleMiddleLeft}
-          ></div>
+          >
+            <div className="section-background"></div>
+            <p className="section-title">Who We Are</p>
+          </div>
         </div>
         <div className="section preview" id="section-preview"></div>
       </div>
@@ -431,17 +434,26 @@ const Sections: React.FC = () => {
           className="section expandable"
           id="section-bottom-left"
           onClick={handleBottomLeft}
-        ></div>
+        >
+          <div className="section-background"></div>
+          <p className="section-title">How We Operate</p>
+        </div>
         <div
           className="section expandable"
           id="section-bottom-middle"
           onClick={handleBottomMiddle}
-        ></div>
+        >
+          <div className="section-background"></div>
+          <p className="section-title">Our Market</p>
+        </div>
         <div
           className="section expandable"
           id="section-bottom-right"
           onClick={handleBottomRight}
-        ></div>
+        >
+          <div className="section-background"></div>
+          <p className="section-title">Talk to Us</p>
+        </div>
       </div>
     </div>
   );
