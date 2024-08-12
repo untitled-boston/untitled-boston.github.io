@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useRef } from "react";
 import Scroller from "./components/Scroller";
 import AnimatedComponent from "./components/AnimatedComponent";
 import { Overview } from "./components/content/Overview";
@@ -64,11 +64,14 @@ const sections: Section[] = [
 const sectionNames = sections.map((section) => section.name);
 
 const App: React.FC = () => {
+  // Create a ref to be passed to the Scroller and StarAnimation components
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
   return (
     <div className="app-container">
       <div className="background" />
-      <StarAnimation />
-      <Scroller sectionNames={sectionNames}>
+      <StarAnimation scrollerRef={scrollerRef} />
+      <Scroller sectionNames={sectionNames} scrollerRef={scrollerRef}>
         {sections.map((section, index) => (
           <AnimatedComponent key={index} animation={section.animation}>
             {section.component}

@@ -1,15 +1,19 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import "../assets/css/Scroller.css";
 import TickerContainer from "./TickerContainer";
 
 interface ScrollerProps {
   children: React.ReactNode[];
   sectionNames: string[]; // Accept section names as a prop
+  scrollerRef: React.RefObject<HTMLDivElement>; // Ref passed from the App component
 }
 
-const Scroller: React.FC<ScrollerProps> = ({ children, sectionNames }) => {
+const Scroller: React.FC<ScrollerProps> = ({
+  children,
+  sectionNames,
+  scrollerRef,
+}) => {
   const [isExpanded, setIsExpanded] = useState(window.innerWidth >= 769);
-  const scrollerRef = useRef<HTMLDivElement>(null);
 
   const toggleButtonContainer = () => {
     setIsExpanded(!isExpanded);
@@ -20,13 +24,8 @@ const Scroller: React.FC<ScrollerProps> = ({ children, sectionNames }) => {
     const scroller = scrollerRef.current;
 
     if (section && scroller) {
-      // Get the top position of the section relative to the scroller-content div
       const sectionTop = section.offsetTop;
-
-      // Calculate the position to scroll to so that the section is centered in the scroller-content div
       const offsetPosition = sectionTop - 50;
-
-      // Smoothly scroll to the calculated position within the scroller-content div
       scroller.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
 
@@ -35,13 +34,12 @@ const Scroller: React.FC<ScrollerProps> = ({ children, sectionNames }) => {
     }
   };
 
-  // Effect to reset scroll position to the top on component mount
   useEffect(() => {
     const scroller = scrollerRef.current;
     if (scroller) {
       scroller.scrollTo({ top: 0, behavior: "instant" });
     }
-  }, []);
+  }, [scrollerRef]);
 
   return (
     <div className="scroller" ref={scrollerRef}>
@@ -57,7 +55,7 @@ const Scroller: React.FC<ScrollerProps> = ({ children, sectionNames }) => {
           <div className="section-buttons">
             {children.map((child, index) => (
               <button key={index} onClick={() => handleScrollToSection(index)}>
-                <p> {sectionNames[index]}</p>
+                <p>{sectionNames[index]}</p>
               </button>
             ))}
           </div>
