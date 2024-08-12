@@ -5,7 +5,7 @@
   border: 2px solid white; /* Border around the ticker */
   color: white;
   position: relative;
-  width: 100%;
+  width: calc(3 * min(27vw, 27vh) + 40px);
   position: relative;
   height: 50px;
   font-weight: bolder;
