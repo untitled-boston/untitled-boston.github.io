@@ -49,7 +49,7 @@ const Sections: React.FC = () => {
     const sectionsVertical = document.getElementById("sections-vertical");
     const sectionsBottom = document.getElementById("sections-bottom");
 
-    const backButtom = document.getElementById("back-button-container");
+    const backButton = document.getElementById("back-button-container");
 
     const topLeft = document.getElementById("section-top-left");
     const middleLeft = document.getElementById("section-middle-left");
@@ -77,7 +77,7 @@ const Sections: React.FC = () => {
     }, 500);
 
     setTimeout(() => {
-      backButtom?.classList.add("enabled");
+      backButton?.classList.add("enabled");
     }, 1000);
   };
 
@@ -87,7 +87,7 @@ const Sections: React.FC = () => {
     const sectionsVertical = document.getElementById("sections-vertical");
     const sectionsBottom = document.getElementById("sections-bottom");
 
-    const backButtom = document.getElementById("back-button-container");
+    const backButton = document.getElementById("back-button-container");
 
     const topLeft = document.getElementById("section-top-left");
     const middleLeft = document.getElementById("section-middle-left");
@@ -115,7 +115,7 @@ const Sections: React.FC = () => {
     }, 500);
 
     setTimeout(() => {
-      backButtom?.classList.add("enabled");
+      backButton?.classList.add("enabled");
     }, 1000);
   };
 
@@ -125,7 +125,7 @@ const Sections: React.FC = () => {
     const sectionsVertical = document.getElementById("sections-vertical");
     const sectionsBottom = document.getElementById("sections-bottom");
 
-    const backButtom = document.getElementById("back-button-container");
+    const backButton = document.getElementById("back-button-container");
 
     const topLeft = document.getElementById("section-top-left");
     const middleLeft = document.getElementById("section-middle-left");
@@ -153,7 +153,7 @@ const Sections: React.FC = () => {
     }, 500);
 
     setTimeout(() => {
-      backButtom?.classList.add("enabled");
+      backButton?.classList.add("enabled");
     }, 1000);
   };
 
@@ -163,7 +163,7 @@ const Sections: React.FC = () => {
     const sectionsVertical = document.getElementById("sections-vertical");
     const sectionsBottom = document.getElementById("sections-bottom");
 
-    const backButtom = document.getElementById("back-button-container");
+    const backButton = document.getElementById("back-button-container");
 
     const topLeft = document.getElementById("section-top-left");
     const middleLeft = document.getElementById("section-middle-left");
@@ -191,7 +191,7 @@ const Sections: React.FC = () => {
     }, 500);
 
     setTimeout(() => {
-      backButtom?.classList.add("enabled");
+      backButton?.classList.add("enabled");
     }, 1000);
   };
 
@@ -201,7 +201,7 @@ const Sections: React.FC = () => {
     const sectionsVertical = document.getElementById("sections-vertical");
     const sectionsBottom = document.getElementById("sections-bottom");
 
-    const backButtom = document.getElementById("back-button-container");
+    const backButton = document.getElementById("back-button-container");
 
     const topLeft = document.getElementById("section-top-left");
     const middleLeft = document.getElementById("section-middle-left");
@@ -229,7 +229,7 @@ const Sections: React.FC = () => {
     }, 500);
 
     setTimeout(() => {
-      backButtom?.classList.add("enabled");
+      backButton?.classList.add("enabled");
     }, 1000);
   };
 
@@ -239,7 +239,7 @@ const Sections: React.FC = () => {
     const sectionsVertical = document.getElementById("sections-vertical");
     const sectionsBottom = document.getElementById("sections-bottom");
 
-    const backButtom = document.getElementById("back-button-container");
+    const backButton = document.getElementById("back-button-container");
 
     const topLeft = document.getElementById("section-top-left");
     const middleLeft = document.getElementById("section-middle-left");
@@ -255,7 +255,7 @@ const Sections: React.FC = () => {
     sectionsBottom?.classList.remove("shrink-vertical");
 
     setCurrentSection("none");
-    backButtom?.classList.remove("enabled");
+    backButton?.classList.remove("enabled");
 
     setTimeout(() => {
       sectionsVertical?.classList.remove("expand");
@@ -274,7 +274,7 @@ const Sections: React.FC = () => {
     const sectionsVertical = document.getElementById("sections-vertical");
     const sectionsBottom = document.getElementById("sections-bottom");
 
-    const backButtom = document.getElementById("back-button-container");
+    const backButton = document.getElementById("back-button-container");
 
     const topLeft = document.getElementById("section-top-left");
     const middleLeft = document.getElementById("section-middle-left");
@@ -290,7 +290,7 @@ const Sections: React.FC = () => {
     sectionsBottom?.classList.remove("shrink-vertical");
 
     setCurrentSection("none");
-    backButtom?.classList.remove("enabled");
+    backButton?.classList.remove("enabled");
 
     setTimeout(() => {
       sectionsVertical?.classList.remove("expand");
@@ -309,7 +309,7 @@ const Sections: React.FC = () => {
     const sectionsVertical = document.getElementById("sections-vertical");
     const sectionsBottom = document.getElementById("sections-bottom");
 
-    const backButtom = document.getElementById("back-button-container");
+    const backButton = document.getElementById("back-button-container");
 
     const topLeft = document.getElementById("section-top-left");
     const middleLeft = document.getElementById("section-middle-left");
@@ -325,7 +325,7 @@ const Sections: React.FC = () => {
     sectionsVertical?.classList.remove("shrink-vertical");
 
     setCurrentSection("none");
-    backButtom?.classList.remove("enabled");
+    backButton?.classList.remove("enabled");
 
     setTimeout(() => {
       topLeft?.classList.remove("shrink-vertical");
@@ -344,7 +344,7 @@ const Sections: React.FC = () => {
     const sectionsVertical = document.getElementById("sections-vertical");
     const sectionsBottom = document.getElementById("sections-bottom");
 
-    const backButtom = document.getElementById("back-button-container");
+    const backButton = document.getElementById("back-button-container");
 
     const topLeft = document.getElementById("section-top-left");
     const middleLeft = document.getElementById("section-middle-left");
@@ -360,7 +360,7 @@ const Sections: React.FC = () => {
     sectionsVertical?.classList.remove("shrink-vertical");
 
     setCurrentSection("none");
-    backButtom?.classList.remove("enabled");
+    backButton?.classList.remove("enabled");
 
     setTimeout(() => {
       topLeft?.classList.remove("shrink-vertical");
@@ -379,7 +379,7 @@ const Sections: React.FC = () => {
     const sectionsVertical = document.getElementById("sections-vertical");
     const sectionsBottom = document.getElementById("sections-bottom");
 
-    const backButtom = document.getElementById("back-button-container");
+    const backButton = document.getElementById("back-button-container");
 
     const topLeft = document.getElementById("section-top-left");
     const middleLeft = document.getElementById("section-middle-left");
@@ -395,7 +395,7 @@ const Sections: React.FC = () => {
     sectionsVertical?.classList.remove("shrink-vertical");
 
     setCurrentSection("none");
-    backButtom?.classList.remove("enabled");
+    backButton?.classList.remove("enabled");
 
     setTimeout(() => {
       topLeft?.classList.remove("shrink-vertical");
