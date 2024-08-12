@@ -143,9 +143,7 @@ const CustomCursor: React.FC = () => {
   return (
     <>
       <div id="pointer" ref={pointerRef}></div>
-      <div id="panner" ref={pannerRef}>
-        Drag Me
-      </div>
+      <div id="panner" ref={pannerRef}></div>
     </>
   );
 };

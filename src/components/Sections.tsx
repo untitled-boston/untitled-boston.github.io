@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../assets/css/Sections.css";
 
 type Sections =
@@ -11,6 +11,35 @@ type Sections =
 
 const Sections: React.FC = () => {
   const [currentSection, setCurrentSection] = useState<Sections>("none");
+  const sectionIds = [
+    "section-top-left",
+    "section-middle-left",
+    "section-bottom-left",
+    "section-bottom-middle",
+    "section-bottom-right",
+    "section-preview",
+  ];
+  const [visibleSections, setVisibleSections] = useState<string[]>([]);
+  const popInSpeed = 500;
+
+  // Utility function to shuffle an array
+  const shuffleArray = (array: string[]) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+
+  useEffect(() => {
+    // Initialize the queue with shuffled section IDs
+    const shuffledIds = shuffleArray([...sectionIds]);
+    shuffledIds.forEach((id, i) => {
+      setTimeout(() => {
+        setVisibleSections((prev) => [...prev, id]);
+      }, i * popInSpeed);
+    });
+  }, []);
 
   const handleTopLeft = () => {
     // Select the other divs by ID
@@ -411,7 +440,9 @@ const Sections: React.FC = () => {
       <div className="sections-top" id="sections-top">
         <div className="sections-vertical" id="sections-vertical">
           <div
-            className="section expandable"
+            className={`section expandable ${
+              visibleSections.includes("section-top-left") ? "visible" : ""
+            }`}
             id="section-top-left"
             onClick={handleTopLeft}
           >
@@ -419,7 +450,9 @@ const Sections: React.FC = () => {
             <p className="section-title">What We Do</p>
           </div>
           <div
-            className="section expandable"
+            className={`section expandable ${
+              visibleSections.includes("section-middle-left") ? "visible" : ""
+            }`}
             id="section-middle-left"
             onClick={handleMiddleLeft}
           >
@@ -427,11 +460,18 @@ const Sections: React.FC = () => {
             <p className="section-title">Who We Are</p>
           </div>
         </div>
-        <div className="section preview" id="section-preview"></div>
+        <div
+          className={`section preview ${
+            visibleSections.includes("section-preview") ? "visible" : ""
+          }`}
+          id="section-preview"
+        ></div>
       </div>
       <div className="sections-bottom" id="sections-bottom">
         <div
-          className="section expandable"
+          className={`section expandable ${
+            visibleSections.includes("section-bottom-left") ? "visible" : ""
+          }`}
           id="section-bottom-left"
           onClick={handleBottomLeft}
         >
@@ -439,7 +479,9 @@ const Sections: React.FC = () => {
           <p className="section-title">How We Operate</p>
         </div>
         <div
-          className="section expandable"
+          className={`section expandable ${
+            visibleSections.includes("section-bottom-middle") ? "visible" : ""
+          }`}
           id="section-bottom-middle"
           onClick={handleBottomMiddle}
         >
@@ -447,7 +489,9 @@ const Sections: React.FC = () => {
           <p className="section-title">Our Market</p>
         </div>
         <div
-          className="section expandable"
+          className={`section expandable ${
+            visibleSections.includes("section-bottom-right") ? "visible" : ""
+          }`}
           id="section-bottom-right"
           onClick={handleBottomRight}
         >
