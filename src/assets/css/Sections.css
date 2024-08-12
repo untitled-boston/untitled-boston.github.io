@@ -76,6 +76,7 @@
   height: 100% !important;
   width: 100% !important;
   cursor: auto;
+  margin-top: 0;
 }
 
 .expandable {

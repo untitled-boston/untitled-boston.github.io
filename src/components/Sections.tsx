@@ -221,13 +221,13 @@ const Sections: React.FC = () => {
 
     topLeft?.classList.remove("expand");
     sectionsTop?.classList.remove("expand");
-    sectionsVertical?.classList.remove("expand");
     sectionsBottom?.classList.remove("shrink-vertical");
 
     setCurrentSection("none");
     backButtom?.classList.remove("enabled");
 
     setTimeout(() => {
+      sectionsVertical?.classList.remove("expand");
       middleLeft?.classList.remove("shrink-vertical");
       preview?.classList.remove("shrink-vertical", "shrink-horizontal");
       bottomLeft?.classList.remove("shrink-vertical");
@@ -256,13 +256,13 @@ const Sections: React.FC = () => {
 
     middleLeft?.classList.remove("expand");
     sectionsTop?.classList.remove("expand");
-    sectionsVertical?.classList.remove("expand");
     sectionsBottom?.classList.remove("shrink-vertical");
 
     setCurrentSection("none");
     backButtom?.classList.remove("enabled");
 
     setTimeout(() => {
+      sectionsVertical?.classList.remove("expand");
       topLeft?.classList.remove("shrink-vertical");
       preview?.classList.remove("shrink-vertical", "shrink-horizontal");
       bottomLeft?.classList.remove("shrink-vertical");
@@ -292,12 +292,12 @@ const Sections: React.FC = () => {
     bottomLeft?.classList.remove("expand");
     sectionsTop?.classList.remove("shrink-vertical");
     sectionsVertical?.classList.remove("shrink-vertical");
-    sectionsBottom?.classList.remove("expand");
 
     setCurrentSection("none");
     backButtom?.classList.remove("enabled");
 
     setTimeout(() => {
+      sectionsBottom?.classList.remove("expand");
       topLeft?.classList.remove("shrink-vertical");
       middleLeft?.classList.remove("shrink-vertical");
       preview?.classList.remove("shrink-vertical");
@@ -328,12 +328,12 @@ const Sections: React.FC = () => {
     bottomMiddle?.classList.remove("expand");
     sectionsTop?.classList.remove("shrink-vertical");
     sectionsVertical?.classList.remove("shrink-vertical");
-    sectionsBottom?.classList.remove("expand");
 
     setCurrentSection("none");
     backButtom?.classList.remove("enabled");
 
     setTimeout(() => {
+      sectionsBottom?.classList.remove("expand");
       topLeft?.classList.remove("shrink-vertical");
       middleLeft?.classList.remove("shrink-vertical");
       preview?.classList.remove("shrink-vertical");
@@ -364,12 +364,12 @@ const Sections: React.FC = () => {
     bottomRight?.classList.remove("expand");
     sectionsTop?.classList.remove("shrink-vertical");
     sectionsVertical?.classList.remove("shrink-vertical");
-    sectionsBottom?.classList.remove("expand");
 
     setCurrentSection("none");
     backButtom?.classList.remove("enabled");
 
     setTimeout(() => {
+      sectionsBottom?.classList.remove("expand");
       topLeft?.classList.remove("shrink-vertical");
       middleLeft?.classList.remove("shrink-vertical");
       preview?.classList.remove("shrink-vertical");
