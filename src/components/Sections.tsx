@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import "../assets/css/Sections.css";
+import CharacterSelect from "./CharacterSelect";
+import { DelayedRender } from "./DelayedRender";
 
 type Sections =
   | "none"
@@ -426,6 +428,13 @@ const Sections: React.FC = () => {
     }
   };
 
+  const renderContent = (id: string, content: ReactNode) => {
+    if (id === currentSection) {
+      return <DelayedRender delay={1250}>{content}</DelayedRender>;
+    }
+    return null;
+  };
+
   return (
     <div className="sections-container">
       <div
@@ -447,7 +456,8 @@ const Sections: React.FC = () => {
             onClick={handleTopLeft}
           >
             <div className="section-background"></div>
-            <p className="section-title">What We Do</p>
+            <p className="section-title">WHAT WE DO</p>
+            {renderContent("top-left", <CharacterSelect />) as ReactNode}
           </div>
           <div
             className={`section expandable ${
@@ -457,7 +467,8 @@ const Sections: React.FC = () => {
             onClick={handleMiddleLeft}
           >
             <div className="section-background"></div>
-            <p className="section-title">Who We Are</p>
+            <p className="section-title">WHO WE ARE</p>
+            {renderContent("middle-left", <CharacterSelect />) as ReactNode}
           </div>
         </div>
         <div
@@ -465,7 +476,12 @@ const Sections: React.FC = () => {
             visibleSections.includes("section-preview") ? "visible" : ""
           }`}
           id="section-preview"
-        ></div>
+        >
+          <div className="preview-container">
+            <img src="/assets/images/hands.png" />
+            <p className="section-title">Discover</p>
+          </div>
+        </div>
       </div>
       <div className="sections-bottom" id="sections-bottom">
         <div
@@ -476,7 +492,8 @@ const Sections: React.FC = () => {
           onClick={handleBottomLeft}
         >
           <div className="section-background"></div>
-          <p className="section-title">How We Operate</p>
+          <p className="section-title">HOW WE OPERATE</p>
+          {renderContent("bottom-left", <CharacterSelect />) as ReactNode}
         </div>
         <div
           className={`section expandable ${
@@ -486,7 +503,8 @@ const Sections: React.FC = () => {
           onClick={handleBottomMiddle}
         >
           <div className="section-background"></div>
-          <p className="section-title">Our Market</p>
+          <p className="section-title">OUR MARKET</p>
+          {renderContent("bottom-middle", <CharacterSelect />) as ReactNode}
         </div>
         <div
           className={`section expandable ${
@@ -496,7 +514,8 @@ const Sections: React.FC = () => {
           onClick={handleBottomRight}
         >
           <div className="section-background"></div>
-          <p className="section-title">Talk to Us</p>
+          <p className="section-title">TALK TO US</p>
+          {renderContent("bottom-right", <CharacterSelect />) as ReactNode}
         </div>
       </div>
     </div>

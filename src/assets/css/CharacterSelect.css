@@ -118,17 +118,6 @@
   max-width: 400px;
 }
 
-.star-rating {
-  display: flex;
-  gap: 5px;
-  margin-top: 10px;
-}
-
-.star {
-  font-size: 1.5rem;
-  color: gold;
-}
-
 /* Responsive layout for screens 768px and below */
 @media (max-width: 768px) {
   .character-select-container {

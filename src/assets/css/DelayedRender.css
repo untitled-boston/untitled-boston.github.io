@@ -1,0 +1,11 @@
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  height: 100%;
+  padding: 40px;
+  padding-top: 180px;
+}
+
+.fade-in.in {
+  opacity: 1;
+}
