@@ -22,6 +22,7 @@ const Sections: React.FC = () => {
     "section-preview",
   ];
   const [visibleSections, setVisibleSections] = useState<string[]>([]);
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const popInSpeed = 500;
 
   // Utility function to shuffle an array
@@ -44,6 +45,9 @@ const Sections: React.FC = () => {
   }, []);
 
   const handleTopLeft = () => {
+    if (currentSection != "none" || isAnimating) return;
+    setIsAnimating(true);
+
     // Select the other divs by ID
     const sectionsTop = document.getElementById("sections-top");
     const sectionsVertical = document.getElementById("sections-vertical");
@@ -74,6 +78,7 @@ const Sections: React.FC = () => {
       sectionsTop?.classList.add("expand");
       sectionsVertical?.classList.add("expand");
       sectionsBottom?.classList.add("shrink-vertical");
+      setIsAnimating(false);
     }, 500);
 
     setTimeout(() => {
@@ -82,6 +87,9 @@ const Sections: React.FC = () => {
   };
 
   const handleMiddleLeft = () => {
+    if (currentSection != "none" || isAnimating) return;
+    setIsAnimating(true);
+
     // Select the other divs by ID
     const sectionsTop = document.getElementById("sections-top");
     const sectionsVertical = document.getElementById("sections-vertical");
@@ -112,6 +120,7 @@ const Sections: React.FC = () => {
       sectionsTop?.classList.add("expand");
       sectionsVertical?.classList.add("expand");
       sectionsBottom?.classList.add("shrink-vertical");
+      setIsAnimating(false);
     }, 500);
 
     setTimeout(() => {
@@ -120,6 +129,9 @@ const Sections: React.FC = () => {
   };
 
   const handleBottomLeft = () => {
+    if (currentSection != "none" || isAnimating) return;
+    setIsAnimating(true);
+
     // Select the other divs by ID
     const sectionsTop = document.getElementById("sections-top");
     const sectionsVertical = document.getElementById("sections-vertical");
@@ -150,6 +162,7 @@ const Sections: React.FC = () => {
       sectionsTop?.classList.add("shrink-vertical");
       sectionsVertical?.classList.add("shrink-vertical");
       sectionsBottom?.classList.add("expand");
+      setIsAnimating(false);
     }, 500);
 
     setTimeout(() => {
@@ -158,6 +171,9 @@ const Sections: React.FC = () => {
   };
 
   const handleBottomMiddle = () => {
+    if (currentSection != "none" || isAnimating) return;
+    setIsAnimating(true);
+
     // Select the other divs by ID
     const sectionsTop = document.getElementById("sections-top");
     const sectionsVertical = document.getElementById("sections-vertical");
@@ -188,6 +204,7 @@ const Sections: React.FC = () => {
       sectionsTop?.classList.add("shrink-vertical");
       sectionsVertical?.classList.add("shrink-vertical");
       sectionsBottom?.classList.add("expand");
+      setIsAnimating(false);
     }, 500);
 
     setTimeout(() => {
@@ -196,6 +213,9 @@ const Sections: React.FC = () => {
   };
 
   const handleBottomRight = () => {
+    if (currentSection != "none" || isAnimating) return;
+    setIsAnimating(true);
+
     // Select the other divs by ID
     const sectionsTop = document.getElementById("sections-top");
     const sectionsVertical = document.getElementById("sections-vertical");
@@ -226,6 +246,7 @@ const Sections: React.FC = () => {
       sectionsTop?.classList.add("shrink-vertical");
       sectionsVertical?.classList.add("shrink-vertical");
       sectionsBottom?.classList.add("expand");
+      setIsAnimating(false);
     }, 500);
 
     setTimeout(() => {
@@ -234,6 +255,9 @@ const Sections: React.FC = () => {
   };
 
   const handleReverseTopLeft = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+
     // Select the other divs by ID
     const sectionsTop = document.getElementById("sections-top");
     const sectionsVertical = document.getElementById("sections-vertical");
@@ -265,10 +289,14 @@ const Sections: React.FC = () => {
       bottomMiddle?.classList.remove("shrink-vertical");
       bottomRight?.classList.remove("shrink-vertical");
       sectionsVertical?.classList.remove("shrink-start");
+      setIsAnimating(false);
     }, 500);
   };
 
   const handleReverseMiddleLeft = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+
     // Select the other divs by ID
     const sectionsTop = document.getElementById("sections-top");
     const sectionsVertical = document.getElementById("sections-vertical");
@@ -300,10 +328,14 @@ const Sections: React.FC = () => {
       bottomMiddle?.classList.remove("shrink-vertical");
       bottomRight?.classList.remove("shrink-vertical");
       sectionsVertical?.classList.remove("shrink-end");
+      setIsAnimating(false);
     }, 500);
   };
 
   const handleReverseBottomLeft = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+
     // Select the other divs by ID
     const sectionsTop = document.getElementById("sections-top");
     const sectionsVertical = document.getElementById("sections-vertical");
@@ -335,10 +367,14 @@ const Sections: React.FC = () => {
       bottomRight?.classList.remove("shrink-horizontal");
       sectionsBottom?.classList.remove("shrink-start");
       sectionsVertical?.classList.remove("shrink-start");
+      setIsAnimating(false);
     }, 500);
   };
 
   const handleReverseBottomMiddle = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+
     // Select the other divs by ID
     const sectionsTop = document.getElementById("sections-top");
     const sectionsVertical = document.getElementById("sections-vertical");
@@ -370,10 +406,14 @@ const Sections: React.FC = () => {
       bottomRight?.classList.remove("shrink-horizontal");
       sectionsBottom?.classList.remove("shrink-center");
       sectionsVertical?.classList.remove("shrink-start");
+      setIsAnimating(false);
     }, 500);
   };
 
   const handleReverseBottomRight = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+
     // Select the other divs by ID
     const sectionsTop = document.getElementById("sections-top");
     const sectionsVertical = document.getElementById("sections-vertical");
@@ -405,10 +445,14 @@ const Sections: React.FC = () => {
       bottomMiddle?.classList.remove("shrink-horizontal");
       sectionsBottom?.classList.remove("shrink-end");
       sectionsVertical?.classList.remove("shrink-start");
+      setIsAnimating(false);
     }, 500);
   };
 
   const handleBack = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+
     switch (currentSection) {
       case "top-left":
         handleReverseTopLeft();

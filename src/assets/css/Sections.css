@@ -230,4 +230,5 @@
 .preview-container img {
   height: 80%;
   width: auto;
+  user-select: none;
 }
