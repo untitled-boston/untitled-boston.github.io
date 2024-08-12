@@ -21,7 +21,7 @@
   position: relative;
   overflow: hidden;
   mix-blend-mode: normal;
-  padding: 4px;
+  overflow: hidden;
 }
 
 .section:not(#section-preview) {
@@ -60,6 +60,8 @@
   font-weight: bolder;
   font-size: 1rem;
   text-align: center;
+  opacity: 1;
+  padding: 4px;
 }
 
 .section:not(#section-preview):not(.expand):hover {
