@@ -2,8 +2,8 @@
 .sections-container {
   display: flex;
   flex-wrap: wrap;
-  width: calc(3 * min(27vw, 27vh) + 40px);
-  height: calc(3 * min(27vw, 27vh) + 40px);
+  width: calc(3 * min(28vw, 28vh) + 40px);
+  height: calc(3 * min(28vw, 28vh) + 40px);
   position: relative;
   margin-top: 20px;
   overflow: hidden;
@@ -21,6 +21,7 @@
   position: relative;
   overflow: hidden;
   mix-blend-mode: normal;
+  padding: 4px;
 }
 
 .section:not(#section-preview) {
@@ -28,7 +29,7 @@
 }
 
 .sections-top {
-  height: calc(2 * (min(27vw, 27vh)) + 20px);
+  height: calc(2 * (min(28vw, 28vh)) + 20px);
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -58,6 +59,7 @@
 .section-title {
   font-weight: bolder;
   font-size: 1rem;
+  text-align: center;
 }
 
 .section:not(#section-preview):not(.expand):hover {
@@ -119,15 +121,15 @@
 
 .expandable {
   width: min(
-    27vw,
-    27vh
+    28vw,
+    28vh
   ); /* Take the smaller value between 50% of viewport width or height */
-  height: min(27vw, 27vh);
+  height: min(28vw, 28vh);
 }
 
 .preview {
-  height: calc(2 * (min(27vw, 27vh)) + 20px);
-  width: calc(2 * (min(27vw, 27vh)) + 20px);
+  height: calc(2 * (min(28vw, 28vh)) + 20px);
+  width: calc(2 * (min(28vw, 28vh)) + 20px);
 }
 
 .back-button-container {
@@ -173,4 +175,14 @@
   opacity: 0.8; /* Slight transparency */
   content: url("/assets/images/point.png"); /* Change image on hover */
   transform: rotateY(180deg);
+}
+
+@media (max-width: 768px) {
+  .back-button-container {
+    top: 20px;
+  }
+
+  .enabled {
+    left: 20px;
+  }
 }
