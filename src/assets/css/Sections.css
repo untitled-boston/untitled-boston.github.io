@@ -75,6 +75,9 @@
   text-align: center;
   opacity: 1;
   padding: 4px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 
 .section:not(#section-preview):not(.expand):hover {
@@ -91,7 +94,6 @@
 }
 
 .section:not(#section-preview).expand .section-title {
-  position: absolute;
   top: 40px;
   right: 40px;
   height: 80px;
@@ -113,6 +115,11 @@
   width: 100%;
   transition: all 1s ease;
   pointer-events: none;
+}
+
+.section-thumbnail {
+  height: 100%;
+  width: 100%;
 }
 
 .section:not(#section-preview):not(.expand):hover .section-background {

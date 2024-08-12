@@ -2,6 +2,7 @@ import React, { ReactNode, useEffect, useState } from "react";
 import "../assets/css/Sections.css";
 import CharacterSelect from "./CharacterSelect";
 import { DelayedRender } from "./DelayedRender";
+import { ThumbnailModel } from "./ThumbnailModel";
 
 type Sections =
   | "none"
@@ -501,6 +502,9 @@ const Sections: React.FC = () => {
           >
             <div className="section-background"></div>
             <p className="section-title">WHAT WE DO</p>
+            <div className="section-thumbnail">
+              <ThumbnailModel assetUrl="" />
+            </div>
             {renderContent("top-left", <CharacterSelect />) as ReactNode}
           </div>
           <div
@@ -512,6 +516,9 @@ const Sections: React.FC = () => {
           >
             <div className="section-background"></div>
             <p className="section-title">WHO WE ARE</p>
+            <div className="section-thumbnail">
+              <ThumbnailModel assetUrl="" />
+            </div>
             {renderContent("middle-left", <CharacterSelect />) as ReactNode}
           </div>
         </div>
@@ -523,6 +530,7 @@ const Sections: React.FC = () => {
         >
           <div className="preview-container">
             <img src="/assets/images/hands.png" />
+
             <p className="section-title">Discover</p>
           </div>
         </div>
@@ -537,6 +545,9 @@ const Sections: React.FC = () => {
         >
           <div className="section-background"></div>
           <p className="section-title">HOW WE OPERATE</p>
+          <div className="section-thumbnail">
+            <ThumbnailModel assetUrl="" />
+          </div>
           {renderContent("bottom-left", <CharacterSelect />) as ReactNode}
         </div>
         <div
@@ -548,6 +559,9 @@ const Sections: React.FC = () => {
         >
           <div className="section-background"></div>
           <p className="section-title">OUR MARKET</p>
+          <div className="section-thumbnail">
+            <ThumbnailModel assetUrl="" />
+          </div>
           {renderContent("bottom-middle", <CharacterSelect />) as ReactNode}
         </div>
         <div
@@ -559,6 +573,9 @@ const Sections: React.FC = () => {
         >
           <div className="section-background"></div>
           <p className="section-title">TALK TO US</p>
+          <div className="section-thumbnail">
+            <ThumbnailModel assetUrl="" />
+          </div>
           {renderContent("bottom-right", <CharacterSelect />) as ReactNode}
         </div>
       </div>
