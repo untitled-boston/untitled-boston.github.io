@@ -5,12 +5,11 @@
   border: 2px solid white; /* Border around the ticker */
   color: white;
   position: relative;
-  width: calc(100% - 110px);
-  position: fixed;
+  width: 100%;
+  position: relative;
   height: 50px;
   font-weight: bolder;
   z-index: 10;
-  margin-left: 70px;
 }
 
 .ticker,
@@ -26,11 +25,4 @@
 p {
   margin: 0;
   user-select: none;
-}
-
-@media (min-width: 769px) {
-  .ticker-container {
-    width: calc(100% - 60px);
-    margin-left: 0px;
-  }
 }

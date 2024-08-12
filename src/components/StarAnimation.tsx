@@ -44,9 +44,7 @@ const estimateProcessingPower = (): number => {
   return power;
 };
 
-const StarAnimation: React.FC<{
-  scrollerRef: React.RefObject<HTMLDivElement>;
-}> = ({ scrollerRef }) => {
+const StarAnimation: React.FC = () => {
   const [numStars, setNumStars] = useState<number>(0);
   const [stars, setStars] = useState<Star[]>([]);
 
@@ -120,33 +118,6 @@ const StarAnimation: React.FC<{
       return () => clearInterval(intervalId);
     }
   }, [numStars, stars]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (scrollerRef && scrollerRef.current) {
-        const scrollPosition = scrollerRef.current.scrollTop;
-        const maxScroll =
-          scrollerRef.current.scrollHeight - scrollerRef.current.clientHeight;
-        const scrollPercentage = scrollPosition / maxScroll;
-
-        const parallaxOffset = scrollPercentage * 100; // Adjust this value for more/less parallax effect
-        const starContainer = document.querySelector(
-          ".star-container"
-        ) as HTMLElement;
-
-        if (starContainer) {
-          starContainer.style.transform = `translateY(-${parallaxOffset}vh)`;
-        }
-      }
-    };
-
-    if (scrollerRef && scrollerRef.current) {
-      scrollerRef.current.addEventListener("scroll", handleScroll);
-      return () => {
-        scrollerRef.current?.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, [scrollerRef]);
 
   return (
     <div className="star-container">
