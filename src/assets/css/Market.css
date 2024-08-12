@@ -19,8 +19,9 @@
   z-index: 2;
   display: flex;
   align-items: center;
-  margin-bottom: -10px;
   margin-left: 15%;
+  border-radius: 10px;
+  box-shadow: 10px 10px 0px #32cd32;
 }
 
 .market-title h1 {
