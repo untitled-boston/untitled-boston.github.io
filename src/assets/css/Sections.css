@@ -2,7 +2,7 @@
 .sections-container {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
+  width: 95%;
   height: calc(3 * min(28vw, 28vh) + 40px);
   position: relative;
   margin-top: 20px;
@@ -321,12 +321,17 @@ canvas {
     height: 60%;
   }
 
+  .sections-vertical {
+    width: calc(50% - 10px);
+  }
+
   .sections-vertical .section {
     height: calc(50% - 10px);
   }
 
   .preview {
     height: 100%;
+    width: calc(50% - 10px);
   }
 
   .sections-bottom {
@@ -338,6 +343,10 @@ canvas {
   }
 
   .sections-container {
+    flex-grow: 1;
+  }
+
+  .loading-container {
     flex-grow: 1;
   }
 
