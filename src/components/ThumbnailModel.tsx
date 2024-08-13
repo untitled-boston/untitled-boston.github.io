@@ -29,7 +29,7 @@ const Model: React.FC<{ url: string; isHovered: boolean }> = ({
 
       // Calculate the distance needed to fit the entire model in view
       const maxDimension = Math.max(size.x, size.y, size.z);
-      const fov = camera.fov * (Math.PI / 180); // Convert vertical FOV to radians
+      const fov = (camera as any).fov * (Math.PI / 180); // Convert vertical FOV to radians
       let distance = maxDimension / (2 * Math.tan(fov / 2));
 
       // Add some padding to the distance
