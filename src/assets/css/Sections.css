@@ -9,6 +9,12 @@
   overflow: hidden;
 }
 
+.loading-container {
+  width: 90%;
+  height: calc(3 * min(28vw, 28vh) + 40px);
+  margin-top: 20px;
+}
+
 /* General section styling */
 .section {
   display: flex;

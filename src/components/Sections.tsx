@@ -7,6 +7,19 @@ import Market from "./content/Market";
 import { Contact } from "./content/Contact";
 import Operations from "./content/Operations";
 import { Overview } from "./content/Overview";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+
+const modelUrls = [
+  "/assets/models/tank.glb",
+  "/assets/models/hydra.glb",
+  "/assets/models/falcon.glb",
+  "/assets/models/batwing.glb",
+  "/assets/models/warthog.glb",
+  "/assets/models/dante.glb",
+  "/assets/models/guy.glb",
+  "/assets/models/piccolo.glb",
+  "/assets/models/cat.glb",
+];
 
 type Sections =
   | "none"
@@ -28,6 +41,7 @@ const Sections: React.FC = () => {
   ];
   const [visibleSections, setVisibleSections] = useState<string[]>([]);
   const [isAnimating, setIsAnimating] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const popInSpeed = 400;
 
   // Utility function to shuffle an array
@@ -40,18 +54,37 @@ const Sections: React.FC = () => {
   };
 
   useEffect(() => {
-    // Initialize the queue with shuffled section IDs
-    const shuffledIds = shuffleArray([...sectionIds]);
-    shuffledIds.forEach((id, i) => {
-      setTimeout(() => {
-        setVisibleSections((prev) => [...prev, id]);
-      }, i * popInSpeed);
-    });
-
-    setTimeout(() => {
-      setIsAnimating(false);
-    }, 2400);
+    // Preload all models
+    const loader = new GLTFLoader();
+    const loadModels = async () => {
+      await Promise.all(
+        modelUrls.map(
+          (url) =>
+            new Promise((resolve) => {
+              loader.load(url, () => resolve(true));
+            })
+        )
+      );
+      setIsLoading(false);
+    };
+    loadModels();
   }, []);
+
+  useEffect(() => {
+    if (!isLoading) {
+      // Initialize the queue with shuffled section IDs
+      const shuffledIds = shuffleArray([...sectionIds]);
+      shuffledIds.forEach((id, i) => {
+        setTimeout(() => {
+          setVisibleSections((prev) => [...prev, id]);
+        }, i * popInSpeed);
+      });
+
+      setTimeout(() => {
+        setIsAnimating(false);
+      }, 2400);
+    }
+  }, [isLoading]);
 
   const handleTopLeft = () => {
     if (currentSection != "none" || isAnimating) return;
@@ -498,6 +531,15 @@ const Sections: React.FC = () => {
         return null;
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="loading-container">
+        <div className="loading-spinner"></div>
+        <p>Loading models...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="sections-container">
