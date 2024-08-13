@@ -473,11 +473,16 @@ const Sections: React.FC = () => {
     }
   };
 
-  const renderContent = (id: string, content: ReactNode) => {
+  const renderContent = (id: string, modelURL: string, content: ReactNode) => {
     if (id === currentSection) {
       return <DelayedRender delay={1250}>{content}</DelayedRender>;
+    } else {
+      return (
+        <div className="section-thumbnail">
+          <ThumbnailModel assetUrl={modelURL} />
+        </div>
+      );
     }
-    return null;
   };
 
   return (
@@ -502,10 +507,14 @@ const Sections: React.FC = () => {
           >
             <div className="section-background"></div>
             <p className="section-title">WHAT WE DO</p>
-            <div className="section-thumbnail">
-              <ThumbnailModel assetUrl="" />
-            </div>
-            {renderContent("top-left", <CharacterSelect />) as ReactNode}
+
+            {
+              renderContent(
+                "top-left",
+                "/assets/models/hydra.glb",
+                <CharacterSelect />
+              ) as ReactNode
+            }
           </div>
           <div
             className={`section expandable ${
@@ -516,10 +525,14 @@ const Sections: React.FC = () => {
           >
             <div className="section-background"></div>
             <p className="section-title">WHO WE ARE</p>
-            <div className="section-thumbnail">
-              <ThumbnailModel assetUrl="" />
-            </div>
-            {renderContent("middle-left", <CharacterSelect />) as ReactNode}
+
+            {
+              renderContent(
+                "middle-left",
+                "/assets/models/biker.glb",
+                <CharacterSelect />
+              ) as ReactNode
+            }
           </div>
         </div>
         <div
@@ -545,10 +558,14 @@ const Sections: React.FC = () => {
         >
           <div className="section-background"></div>
           <p className="section-title">HOW WE OPERATE</p>
-          <div className="section-thumbnail">
-            <ThumbnailModel assetUrl="" />
-          </div>
-          {renderContent("bottom-left", <CharacterSelect />) as ReactNode}
+
+          {
+            renderContent(
+              "bottom-left",
+              "/assets/models/dante.glb",
+              <CharacterSelect />
+            ) as ReactNode
+          }
         </div>
         <div
           className={`section expandable ${
@@ -559,10 +576,14 @@ const Sections: React.FC = () => {
         >
           <div className="section-background"></div>
           <p className="section-title">OUR MARKET</p>
-          <div className="section-thumbnail">
-            <ThumbnailModel assetUrl="" />
-          </div>
-          {renderContent("bottom-middle", <CharacterSelect />) as ReactNode}
+
+          {
+            renderContent(
+              "bottom-middle",
+              "/assets/models/falcon.glb",
+              <CharacterSelect />
+            ) as ReactNode
+          }
         </div>
         <div
           className={`section expandable ${
@@ -573,10 +594,14 @@ const Sections: React.FC = () => {
         >
           <div className="section-background"></div>
           <p className="section-title">TALK TO US</p>
-          <div className="section-thumbnail">
-            <ThumbnailModel assetUrl="" />
-          </div>
-          {renderContent("bottom-right", <CharacterSelect />) as ReactNode}
+
+          {
+            renderContent(
+              "bottom-right",
+              "/assets/models/laptop.glb",
+              <CharacterSelect />
+            ) as ReactNode
+          }
         </div>
       </div>
     </div>

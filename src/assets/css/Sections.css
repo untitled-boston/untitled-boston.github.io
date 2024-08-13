@@ -53,10 +53,6 @@
   gap: 20px;
 }
 
-p {
-  transition: all 0.5s ease;
-}
-
 .sections-vertical {
   height: 100%;
   flex-grow: 1;
@@ -92,7 +88,10 @@ p {
   padding: 4px;
   position: absolute;
   top: 20px;
+  right: auto;
   left: 20px;
+  width: fit-content;
+  transition: all 0.5s ease;
 }
 
 .section:not(#section-preview):not(.expand):hover {
@@ -122,6 +121,7 @@ p {
   justify-content: right;
   align-items: center;
   white-space: nowrap;
+  padding-right: 40px;
 }
 
 .section-background {
@@ -137,6 +137,15 @@ p {
 .section-thumbnail {
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block; /* Ensures no extra space around the canvas */
 }
 
 .section:not(#section-preview):not(.expand):hover .section-background {
@@ -276,6 +285,7 @@ p {
     font-size: 1rem;
     height: 40px;
     width: calc(100% - 100px);
+    padding-right: 20px;
   }
 
   .sections-top {
