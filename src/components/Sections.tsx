@@ -536,7 +536,6 @@ const Sections: React.FC = () => {
     return (
       <div className="loading-container">
         <div className="loading-spinner"></div>
-        <p>Loading models...</p>
       </div>
     );
   }
