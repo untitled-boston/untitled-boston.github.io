@@ -65,8 +65,11 @@ const StarAnimation: React.FC = () => {
         Array(numStars)
           .fill(null)
           .map<Star>(() => ({
-            charIndex: 0,
-            position: { top: "0px", left: "0px" },
+            charIndex: Math.floor(Math.random() * starChars.length),
+            position: {
+              top: Math.floor(Math.random() * 100) + "%",
+              left: Math.floor(Math.random() * 100) + "%",
+            },
             stayIntervals: Math.floor(Math.random() * 11), // Random number of intervals between 0-10
             loopStart: Math.floor(Math.random() * starChars.length), // Random start index for looping
             loopEnd: Math.floor(Math.random() * starChars.length), // Random end index for looping

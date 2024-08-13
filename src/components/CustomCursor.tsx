@@ -25,6 +25,9 @@ const CustomCursor: React.FC = () => {
     const isLeftOutOfScreen = () => getOffset(panner!).left > window.innerWidth;
     const isRightOutOfScreen = () => getOffset(panner!).left < 0;
 
+    // Initially position the pointer off-screen
+    TweenLite.set(pointer, { left: "-100px", top: "-100px" });
+
     const handleMouseMove = (e: MouseEvent) => {
       const x = e.clientX - pointerSize / 2 + "px";
       const y = e.clientY - pointerSize / 2 + "px";
