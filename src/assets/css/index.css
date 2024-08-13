@@ -63,3 +63,11 @@ body,
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 768px) {
+  .content-container {
+    padding: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}

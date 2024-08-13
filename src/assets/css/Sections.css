@@ -292,7 +292,6 @@ p {
 
   .sections-bottom {
     height: 40%;
-    padding-bottom: 20px;
   }
 
   .sections-bottom .section {
@@ -304,7 +303,8 @@ p {
   }
 
   .section-title {
-    top: auto;
-    left: auto;
+    top: 5px;
+    left: 5px;
+    text-align: left;
   }
 }
