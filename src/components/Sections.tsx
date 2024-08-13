@@ -23,8 +23,8 @@ const Sections: React.FC = () => {
     "section-preview",
   ];
   const [visibleSections, setVisibleSections] = useState<string[]>([]);
-  const [isAnimating, setIsAnimating] = useState<boolean>(false);
-  const popInSpeed = 500;
+  const [isAnimating, setIsAnimating] = useState<boolean>(true);
+  const popInSpeed = 400;
 
   // Utility function to shuffle an array
   const shuffleArray = (array: string[]) => {
@@ -43,6 +43,10 @@ const Sections: React.FC = () => {
         setVisibleSections((prev) => [...prev, id]);
       }, i * popInSpeed);
     });
+
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 2400);
   }, []);
 
   const handleTopLeft = () => {
