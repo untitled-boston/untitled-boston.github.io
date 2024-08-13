@@ -181,6 +181,7 @@ canvas {
 .expand {
   height: 100% !important;
   width: 100% !important;
+  gap: 0px;
 }
 
 .expandable {

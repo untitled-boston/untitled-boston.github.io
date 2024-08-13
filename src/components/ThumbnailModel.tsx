@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from "react";
-import { Canvas, useFrame, extend } from "@react-three/fiber";
+import React, { useRef, useEffect, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { useLoader, useThree } from "@react-three/fiber";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
@@ -9,7 +9,10 @@ interface ThumbnailModelProps {
   assetUrl: string; // URL to the 3D model
 }
 
-const Model: React.FC<{ url: string }> = ({ url }) => {
+const Model: React.FC<{ url: string; isHovered: boolean }> = ({
+  url,
+  isHovered,
+}) => {
   const modelRef = useRef<THREE.Group>(null!);
   const gltf = useLoader(GLTFLoader, url);
   const { camera } = useThree();
@@ -26,7 +29,7 @@ const Model: React.FC<{ url: string }> = ({ url }) => {
 
       // Calculate the distance needed to fit the entire model in view
       const maxDimension = Math.max(size.x, size.y, size.z);
-      const fov = camera.fov * (Math.PI / 180); // [IGNORE ERROR] Convert vertical FOV to radians
+      const fov = camera.fov * (Math.PI / 180); // Convert vertical FOV to radians
       let distance = maxDimension / (2 * Math.tan(fov / 2));
 
       // Add some padding to the distance
@@ -37,7 +40,7 @@ const Model: React.FC<{ url: string }> = ({ url }) => {
       camera.lookAt(center);
       camera.updateProjectionMatrix();
 
-      // Set the emissive material
+      // Set the base emissive material
       modelRef.current.traverse((child) => {
         if (child instanceof THREE.Mesh) {
           child.material = new THREE.MeshStandardMaterial({
@@ -49,6 +52,18 @@ const Model: React.FC<{ url: string }> = ({ url }) => {
       });
     }
   }, [gltf, camera]);
+
+  useEffect(() => {
+    if (modelRef.current) {
+      modelRef.current.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          (child.material as THREE.MeshStandardMaterial).emissive.set(
+            isHovered ? 0xff007f : 0x22bbff
+          ); // Change color on hover
+        }
+      });
+    }
+  }, [isHovered]);
 
   // Rotate and float the model
   useFrame((state) => {
@@ -63,16 +78,20 @@ const Model: React.FC<{ url: string }> = ({ url }) => {
 };
 
 export const ThumbnailModel: React.FC<ThumbnailModelProps> = ({ assetUrl }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   if (!assetUrl || assetUrl.length === 0) return null;
 
   return (
     <Canvas
-      style={{ width: "100%", height: "100%" }} // Set the canvas size
-      camera={{ fov: 50 }} // Adjusted camera FOV
+      style={{ width: "100%", height: "100%" }}
+      camera={{ fov: 50 }}
+      onPointerOver={() => setIsHovered(true)}
+      onPointerOut={() => setIsHovered(false)}
     >
       <ambientLight intensity={0.5} />
       <directionalLight position={[5, 5, 5]} />
-      <Model url={assetUrl} />
+      <Model url={assetUrl} isHovered={isHovered} />
       <EffectComposer>
         <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
       </EffectComposer>

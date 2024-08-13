@@ -367,6 +367,7 @@ const Sections: React.FC = () => {
       bottomMiddle?.classList.remove("shrink-horizontal");
       bottomRight?.classList.remove("shrink-horizontal");
       sectionsBottom?.classList.remove("shrink-start");
+      sectionsBottom?.classList.remove("expand");
       sectionsVertical?.classList.remove("shrink-start");
       setIsAnimating(false);
     }, 500);
@@ -406,6 +407,7 @@ const Sections: React.FC = () => {
       bottomLeft?.classList.remove("shrink-horizontal");
       bottomRight?.classList.remove("shrink-horizontal");
       sectionsBottom?.classList.remove("shrink-center");
+      sectionsBottom?.classList.remove("expand");
       sectionsVertical?.classList.remove("shrink-start");
       setIsAnimating(false);
     }, 500);
@@ -445,6 +447,7 @@ const Sections: React.FC = () => {
       bottomLeft?.classList.remove("shrink-horizontal");
       bottomMiddle?.classList.remove("shrink-horizontal");
       sectionsBottom?.classList.remove("shrink-end");
+      sectionsBottom?.classList.remove("expand");
       sectionsVertical?.classList.remove("shrink-start");
       setIsAnimating(false);
     }, 500);
@@ -474,14 +477,17 @@ const Sections: React.FC = () => {
   };
 
   const renderContent = (id: string, modelURL: string, content: ReactNode) => {
-    if (id === currentSection) {
-      return <DelayedRender delay={1250}>{content}</DelayedRender>;
-    } else {
-      return (
-        <div className="section-thumbnail">
-          <ThumbnailModel assetUrl={modelURL} />
-        </div>
-      );
+    switch (currentSection) {
+      case "none":
+        return (
+          <div className="section-thumbnail">
+            <ThumbnailModel assetUrl={modelURL} />
+          </div>
+        );
+      case id:
+        return <DelayedRender delay={1250}>{content}</DelayedRender>;
+      default:
+        return null;
     }
   };
 
