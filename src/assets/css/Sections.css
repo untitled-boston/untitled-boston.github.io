@@ -194,7 +194,7 @@ canvas {
 
 .preview {
   height: calc(2 * (min(28vw, 28vh)) + 20px);
-  width: 55%;
+  width: 58%;
 }
 
 .back-button-container {

@@ -1,30 +1,21 @@
 .overview-container {
   position: relative;
-  height: fit-content;
-  height: fit-content;
   width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.overview-container * {
-  user-select: none;
+  align-items: center;
+  color: white;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
 .overview-title {
-  position: relative;
   border: 2px solid gold;
   background-color: black;
-  padding: 6px 20px;
-  height: fit-content;
-  width: fit-content;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  margin-left: 5%;
+  padding: 10px 20px;
   border-radius: 10px;
-  box-shadow: 10px 10px 0px gold;
-  color: gold;
+  box-shadow: 5px 5px 0px gold;
+  margin-bottom: 20px;
 }
 
 .overview-title h1 {
@@ -32,67 +23,75 @@
   font-size: 2rem;
 }
 
-.overview-img {
+.slider-container {
   position: relative;
-  height: fit-content;
-  width: fit-content;
-  margin-top: -40px;
-  margin-left: 10%;
+  width: 80%;
+  max-width: 800px;
+  overflow: hidden;
   border: 2px solid white;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-.overview-img img {
+.slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.slide img,
+.slide iframe {
+  width: 100%;
   height: auto;
-  width: 80vw;
+  border-radius: 10px;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.slider-button.prev {
+  left: 10px;
+}
+
+.slider-button.next {
+  right: 10px;
+}
+
+.slider-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .overview-content {
-  position: relative;
-  margin-top: -60px;
   width: 90%;
-  border: 2px solid white;
-  border-left: 8px solid;
-  border-right: 8px solid;
   background-color: black;
-  z-index: 2;
-  padding: 10px 20px;
-  color: white;
-}
-
-.overview-content p {
+  border: 2px solid white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
   font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
-  .overview-title {
-    margin-left: 0;
-  }
-
   .overview-title h1 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
-  .overview-img {
-    margin-top: 20px;
-    margin-left: -5%;
-  }
-
-  .overview-img img {
-    height: auto;
-    width: 90vw;
+  .slider-container {
+    width: 100%;
   }
 
   .overview-content {
-    margin-top: 20px;
-    width: 95%;
-    margin-left: 5%;
-  }
-
-  .overview-content p {
     font-size: 1rem;
   }
 }

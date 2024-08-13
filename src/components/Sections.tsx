@@ -3,6 +3,10 @@ import "../assets/css/Sections.css";
 import CharacterSelect from "./CharacterSelect";
 import { DelayedRender } from "./DelayedRender";
 import { ThumbnailModel } from "./ThumbnailModel";
+import Market from "./content/Market";
+import { Contact } from "./content/Contact";
+import Operations from "./content/Operations";
+import { Overview } from "./content/Overview";
 
 type Sections =
   | "none"
@@ -522,7 +526,7 @@ const Sections: React.FC = () => {
               renderContent(
                 "top-left",
                 "/assets/models/tank.glb",
-                <CharacterSelect />
+                <Overview />
               ) as ReactNode
             }
           </div>
@@ -574,7 +578,7 @@ const Sections: React.FC = () => {
             renderContent(
               "bottom-left",
               "/assets/models/falcon.glb",
-              <CharacterSelect />
+              <Operations />
             ) as ReactNode
           }
         </div>
@@ -592,7 +596,7 @@ const Sections: React.FC = () => {
             renderContent(
               "bottom-middle",
               "/assets/models/batwing.glb",
-              <CharacterSelect />
+              <Market />
             ) as ReactNode
           }
         </div>
@@ -610,7 +614,7 @@ const Sections: React.FC = () => {
             renderContent(
               "bottom-right",
               "/assets/models/warthog.glb",
-              <CharacterSelect />
+              <Contact />
             ) as ReactNode
           }
         </div>
