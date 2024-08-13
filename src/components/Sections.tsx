@@ -552,9 +552,10 @@ const Sections: React.FC = () => {
           id="section-preview"
         >
           <div className="preview-container">
-            <img src="/assets/images/hands.png" />
-
-            <p className="section-title">Discover</p>
+            <video controls width="100%" height="100%" autoPlay loop muted>
+              <source src="/assets/video/vibe.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>

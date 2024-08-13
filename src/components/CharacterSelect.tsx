@@ -7,17 +7,15 @@ interface Character {
   name: string;
   modelURL: string;
   description: string;
-  stats: number;
 }
 
 const characters: Character[] = [
   {
     title: "President of Business Development",
     name: "Jeff D. Jeffries",
-    modelURL: "/assets/models/cat.glb",
+    modelURL: "/assets/models/dante.glb",
     description:
       "Jeff has a decade of experience in event management and has led numerous successful projects across the country.",
-    stats: 5,
   },
   {
     title: "Chief Logistics Officer",
@@ -25,7 +23,6 @@ const characters: Character[] = [
     modelURL: "/assets/models/guy.glb",
     description:
       "Phi is a creative visionary with a deep understanding of the arts and a passion for bringing unique experiences to life.",
-    stats: 4,
   },
   {
     title: "Creative Director",
@@ -33,7 +30,13 @@ const characters: Character[] = [
     modelURL: "/assets/models/piccolo.glb",
     description:
       "Marcelo is an innovative artist with a passion for the underground scene and a knack for creating memorable visuals.",
-    stats: 3,
+  },
+  {
+    title: "Head of Public Relations",
+    name: "Qad Muhammad",
+    modelURL: "/assets/models/cat.glb",
+    description:
+      "Marcelo is an innovative artist with a passion for the underground scene and a knack for creating memorable visuals.",
   },
 ];
 
