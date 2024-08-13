@@ -511,7 +511,7 @@ const Sections: React.FC = () => {
             {
               renderContent(
                 "top-left",
-                "/assets/models/hydra.glb",
+                "/assets/models/tank.glb",
                 <CharacterSelect />
               ) as ReactNode
             }
@@ -529,7 +529,7 @@ const Sections: React.FC = () => {
             {
               renderContent(
                 "middle-left",
-                "/assets/models/biker.glb",
+                "/assets/models/hydra.glb",
                 <CharacterSelect />
               ) as ReactNode
             }
@@ -562,7 +562,7 @@ const Sections: React.FC = () => {
           {
             renderContent(
               "bottom-left",
-              "/assets/models/dante.glb",
+              "/assets/models/falcon.glb",
               <CharacterSelect />
             ) as ReactNode
           }
@@ -580,7 +580,7 @@ const Sections: React.FC = () => {
           {
             renderContent(
               "bottom-middle",
-              "/assets/models/falcon.glb",
+              "/assets/models/batwing.glb",
               <CharacterSelect />
             ) as ReactNode
           }
@@ -598,7 +598,7 @@ const Sections: React.FC = () => {
           {
             renderContent(
               "bottom-right",
-              "/assets/models/laptop.glb",
+              "/assets/models/warthog.glb",
               <CharacterSelect />
             ) as ReactNode
           }
