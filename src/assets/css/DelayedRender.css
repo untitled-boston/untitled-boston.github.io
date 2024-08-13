@@ -10,3 +10,9 @@
 .fade-in.in {
   opacity: 1;
 }
+
+@media (max-width: 768px) {
+  .fade-in {
+    padding-top: 80px;
+  }
+}

@@ -55,7 +55,7 @@ export const CharacterSelect: React.FC = () => {
             className="character-button"
             onClick={() => handleCharacterClick(character)}
           >
-            {character.title}
+            <p>{character.title}</p>
           </button>
         ))}
       </div>
@@ -76,19 +76,6 @@ export const CharacterSelect: React.FC = () => {
             <p className="character-description">
               {selectedCharacter.description}
             </p>
-            <div className="star-rating">
-              {[...Array(5)].map((_, i) => (
-                <span
-                  key={i}
-                  className="star"
-                  style={{
-                    color: i < selectedCharacter.stats ? "gold" : "gray",
-                  }}
-                >
-                  &#9733;
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>
