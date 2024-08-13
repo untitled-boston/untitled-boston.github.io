@@ -344,6 +344,7 @@ canvas {
 
   .sections-container {
     flex-grow: 1;
+    padding-bottom: 40px;
   }
 
   .loading-container {
