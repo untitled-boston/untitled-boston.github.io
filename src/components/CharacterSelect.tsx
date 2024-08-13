@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "../assets/css/CharacterSelect.css";
+import { ThumbnailModel } from "./ThumbnailModel";
 
 interface Character {
   title: string;
   name: string;
-  photo: string;
+  modelURL: string;
   description: string;
   stats: number;
 }
@@ -13,7 +14,7 @@ const characters: Character[] = [
   {
     title: "President of Business Development",
     name: "Jeff D. Jeffries",
-    photo: "/path/to/john-doe.jpg",
+    modelURL: "/assets/models/cat.glb",
     description:
       "Jeff has a decade of experience in event management and has led numerous successful projects across the country.",
     stats: 5,
@@ -21,7 +22,7 @@ const characters: Character[] = [
   {
     title: "Chief Logistics Officer",
     name: "Phi Bui",
-    photo: "/path/to/jane-smith.jpg",
+    modelURL: "/assets/models/guy.glb",
     description:
       "Phi is a creative visionary with a deep understanding of the arts and a passion for bringing unique experiences to life.",
     stats: 4,
@@ -29,7 +30,7 @@ const characters: Character[] = [
   {
     title: "Creative Director",
     name: "Marcelo Escobar",
-    photo: "/path/to/jane-smith.jpg",
+    modelURL: "/assets/models/piccolo.glb",
     description:
       "Marcelo is an innovative artist with a passion for the underground scene and a knack for creating memorable visuals.",
     stats: 3,
@@ -61,13 +62,15 @@ export const CharacterSelect: React.FC = () => {
       <div className="character-info-container">
         <div className="character-info">
           <div className="front">
-            <img
-              src={selectedCharacter.photo}
-              alt={selectedCharacter.name}
-              className="character-photo"
-            />
-            <h2>{selectedCharacter.title}</h2>
+            <div className="character-photo">
+              <ThumbnailModel
+                key={selectedCharacter.modelURL} // Force re-render by using the model URL as a key
+                assetUrl={selectedCharacter.modelURL}
+                enableHover={false}
+              />
+            </div>
             <h1>{selectedCharacter.name}</h1>
+            <h2>{selectedCharacter.title}</h2>
           </div>
           <div className="back">
             <p className="character-description">

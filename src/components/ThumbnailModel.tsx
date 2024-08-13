@@ -7,6 +7,7 @@ import * as THREE from "three";
 
 interface ThumbnailModelProps {
   assetUrl: string; // URL to the 3D model
+  enableHover: boolean;
 }
 
 const Model: React.FC<{ url: string; isHovered: boolean }> = ({
@@ -16,6 +17,7 @@ const Model: React.FC<{ url: string; isHovered: boolean }> = ({
   const modelRef = useRef<THREE.Group>(null!);
   const gltf = useLoader(GLTFLoader, url);
   const { camera } = useThree();
+  const [floatAmplitude, setFloatAmplitude] = useState(0.1);
 
   useEffect(() => {
     if (modelRef.current) {
@@ -39,6 +41,9 @@ const Model: React.FC<{ url: string; isHovered: boolean }> = ({
       camera.position.set(0, center.y, distance);
       camera.lookAt(center);
       camera.updateProjectionMatrix();
+
+      // Set the float amplitude relative to the model size
+      setFloatAmplitude(size.y * 0.05); // Adjust the scaling factor as needed
 
       // Set the base emissive material
       modelRef.current.traverse((child) => {
@@ -70,24 +75,31 @@ const Model: React.FC<{ url: string; isHovered: boolean }> = ({
     const time = state.clock.getElapsedTime();
     if (modelRef.current) {
       modelRef.current.rotation.y += 0.004; // Continuous rotation
-      modelRef.current.position.y = Math.sin(time * 2) * 0.1; // Floating effect
+      modelRef.current.position.y = Math.sin(time * 2) * floatAmplitude; // Scaled floating effect
     }
   });
 
   return <primitive ref={modelRef} object={gltf.scene} />;
 };
 
-export const ThumbnailModel: React.FC<ThumbnailModelProps> = ({ assetUrl }) => {
+export const ThumbnailModel: React.FC<ThumbnailModelProps> = ({
+  assetUrl,
+  enableHover,
+}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   if (!assetUrl || assetUrl.length === 0) return null;
+
+  const handleHover = (hovered: boolean) => {
+    setIsHovered(enableHover ? hovered : false);
+  };
 
   return (
     <Canvas
       style={{ width: "100%", height: "100%" }}
       camera={{ fov: 50 }}
-      onPointerOver={() => setIsHovered(true)}
-      onPointerOut={() => setIsHovered(false)}
+      onPointerOver={() => handleHover(true)}
+      onPointerOut={() => handleHover(false)}
     >
       <ambientLight intensity={0.5} />
       <directionalLight position={[5, 5, 5]} />

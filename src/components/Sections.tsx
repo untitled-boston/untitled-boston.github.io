@@ -485,7 +485,7 @@ const Sections: React.FC = () => {
       case "none":
         return (
           <div className="section-thumbnail">
-            <ThumbnailModel assetUrl={modelURL} />
+            <ThumbnailModel assetUrl={modelURL} enableHover={true} />
           </div>
         );
       case id:
