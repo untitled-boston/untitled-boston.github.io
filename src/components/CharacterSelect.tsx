@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import "../assets/css/CharacterSelect.css";
 import { ThumbnailModel } from "./ThumbnailModel";
 
@@ -13,14 +13,14 @@ const characters: Character[] = [
   {
     title: "President of Business Development",
     name: "Jeff D. Jeffries",
-    modelURL: "/assets/models/dante.glb",
+    modelURL: "/assets/models/robsquid.glb",
     description:
       "Jeff has a decade of experience in event management and has led numerous successful projects across the country.",
   },
   {
     title: "Chief Logistics Officer",
     name: "Phi Bui",
-    modelURL: "/assets/models/guy.glb",
+    modelURL: "/assets/models/veigar.glb",
     description:
       "Phi is a creative visionary with a deep understanding of the arts and a passion for bringing unique experiences to life.",
   },
@@ -66,11 +66,13 @@ export const CharacterSelect: React.FC = () => {
         <div className="character-info">
           <div className="front">
             <div className="character-photo">
-              <ThumbnailModel
-                key={selectedCharacter.modelURL} // Force re-render by using the model URL as a key
-                assetUrl={selectedCharacter.modelURL}
-                enableHover={false}
-              />
+              <Suspense fallback={<div className="loading-spinner"></div>}>
+                <ThumbnailModel
+                  key={selectedCharacter.modelURL} // Force re-render by using the model URL as a key
+                  assetUrl={selectedCharacter.modelURL}
+                  enableHover={false}
+                />
+              </Suspense>
             </div>
             <h1>{selectedCharacter.name}</h1>
             <h2>{selectedCharacter.title}</h2>

@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, Suspense, useEffect, useState } from "react";
 import "../assets/css/Sections.css";
 import CharacterSelect from "./CharacterSelect";
 import { DelayedRender } from "./DelayedRender";
@@ -15,7 +15,6 @@ const modelUrls = [
   "/assets/models/falcon.glb",
   "/assets/models/batwing.glb",
   "/assets/models/warthog.glb",
-  "/assets/models/dante.glb",
   "/assets/models/guy.glb",
   "/assets/models/piccolo.glb",
   "/assets/models/cat.glb",
@@ -521,9 +520,11 @@ const Sections: React.FC = () => {
     switch (currentSection) {
       case "none":
         return (
-          <div className="section-thumbnail">
-            <ThumbnailModel assetUrl={modelURL} enableHover={true} />
-          </div>
+          <Suspense fallback={<div className="loading-spinner"></div>}>
+            <div className="section-thumbnail">
+              <ThumbnailModel assetUrl={modelURL} enableHover={true} />
+            </div>
+          </Suspense>
         );
       case id:
         return <DelayedRender delay={1250}>{content}</DelayedRender>;

@@ -171,12 +171,6 @@
   align-items: center;
 }
 
-canvas {
-  width: 100% !important;
-  height: 100% !important;
-  display: block; /* Ensures no extra space around the canvas */
-}
-
 .section:not(#section-preview):not(.expand):hover .section-background {
   background-color: white;
 }
@@ -185,11 +179,13 @@ canvas {
   height: 0px !important;
   border: none;
   margin-bottom: 0px;
+  pointer-events: none;
 }
 
 .shrink-horizontal {
   width: 0px !important;
   border: none;
+  pointer-events: none;
 }
 
 .shrink-start {

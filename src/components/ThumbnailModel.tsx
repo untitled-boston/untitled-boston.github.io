@@ -4,6 +4,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { useLoader, useThree } from "@react-three/fiber";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import * as THREE from "three";
+import "../assets/css/ThumbnailModel.css";
 
 interface ThumbnailModelProps {
   assetUrl: string; // URL to the 3D model
