@@ -595,11 +595,18 @@ const Sections: React.FC = () => {
           className={`section preview ${
             visibleSections.includes("section-preview") ? "visible" : ""
           }`}
-          style={{ pointerEvents: isAnimating ? "none" : "auto" }}
           id="section-preview"
         >
           <div className="preview-container">
-            <video controls width="100%" height="100%" autoPlay loop muted>
+            <video
+              style={{ pointerEvents: isAnimating ? "none" : "auto" }}
+              controls
+              width="100%"
+              height="100%"
+              autoPlay
+              loop
+              muted
+            >
               <source src="/assets/video/vibe.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
