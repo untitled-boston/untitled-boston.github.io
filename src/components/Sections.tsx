@@ -52,6 +52,30 @@ const Sections: React.FC = () => {
     return array;
   };
 
+  const videoCheck = () => {
+    const videoElement = document.getElementById("preview-video");
+
+    if (!videoElement || isAnimating) return;
+
+    // Check if the screen width is greater than 768px (considered desktop)
+    if (window.innerWidth > 768) {
+      // Disable fullscreen on desktop
+      videoElement.setAttribute("controlsList", "nofullscreen");
+    } else {
+      // Remove the attribute on mobile devices
+      videoElement.removeAttribute("controlsList");
+    }
+
+    // Optionally, update on window resize
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        videoElement.setAttribute("controlsList", "nofullscreen");
+      } else {
+        videoElement.removeAttribute("controlsList");
+      }
+    });
+  };
+
   useEffect(() => {
     // Preload all models
     const loader = new GLTFLoader();
@@ -84,6 +108,10 @@ const Sections: React.FC = () => {
       }, 2400);
     }
   }, [isLoading]);
+
+  useEffect(() => {
+    videoCheck();
+  }, [isAnimating]);
 
   const handleTopLeft = () => {
     if (currentSection != "none" || isAnimating) return;
@@ -599,7 +627,7 @@ const Sections: React.FC = () => {
         >
           <div className="preview-container">
             <video
-              style={{ pointerEvents: isAnimating ? "none" : "auto" }}
+              id="preview-view"
               controls
               width="100%"
               height="100%"
