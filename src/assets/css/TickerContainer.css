@@ -20,9 +20,17 @@
 .ticker__element {
   display: flex;
   align-items: center;
+  padding: 0 10px; /* Add some padding to the text */
+  box-sizing: border-box; /* Include padding in element's width */
 }
 
 p {
   margin: 0;
   user-select: none;
+}
+
+@media (max-width: 768px) {
+  .ticker-container {
+    font-size: 1rem; /* Adjust font size for mobile */
+  }
 }

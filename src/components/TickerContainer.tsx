@@ -7,9 +7,12 @@ interface TickerProps {
 }
 
 const TickerContainer: React.FC<TickerProps> = ({ text }) => {
+  const isMobile = window.innerWidth <= 768;
+  const speed = isMobile ? 5 : 10; // Slower speed on mobile
+
   return (
     <div className="ticker-container">
-      <Ticker>{() => <p>{text}</p>}</Ticker>
+      <Ticker speed={speed}>{() => <p>{text}</p>}</Ticker>
     </div>
   );
 };

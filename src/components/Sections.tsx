@@ -55,8 +55,10 @@ const Sections: React.FC = () => {
   useEffect(() => {
     // Preload all models
     const loader = new GLTFLoader();
+    let loadingTimeout: number | undefined;
+
     const loadModels = async () => {
-      await Promise.all(
+      const loadPromise = Promise.all(
         modelUrls.map(
           (url) =>
             new Promise((resolve) => {
@@ -64,9 +66,23 @@ const Sections: React.FC = () => {
             })
         )
       );
+
+      // Set a timeout to proceed after 4 seconds
+      loadingTimeout = setTimeout(() => {
+        setIsLoading(false);
+      }, 4000);
+
+      await loadPromise;
+
+      // Clear the timeout if loading finishes before 4 seconds
+      clearTimeout(loadingTimeout);
       setIsLoading(false);
     };
+
     loadModels();
+
+    // Clean up timeout if the component unmounts
+    return () => clearTimeout(loadingTimeout);
   }, []);
 
   useEffect(() => {
