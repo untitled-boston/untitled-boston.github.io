@@ -595,6 +595,7 @@ const Sections: React.FC = () => {
           className={`section preview ${
             visibleSections.includes("section-preview") ? "visible" : ""
           }`}
+          style={{ pointerEvents: isAnimating ? "none" : "auto" }}
           id="section-preview"
         >
           <div className="preview-container">
