@@ -6,7 +6,11 @@ export const Overview = () => {
 
   const slides = [
     {
-      title: "Jazz Vibes",
+      title: "Asalto @ God's Country",
+      content: <div className="slide"></div>,
+    },
+    {
+      title: "Summer Speakeasy w/ Baker Street Radio",
       content: (
         <div className="slide">
           <img src="/assets/images/jazz.jpg" alt="Jazz Image" />
@@ -14,13 +18,29 @@ export const Overview = () => {
       ),
     },
     {
-      title: "Live Performance",
+      title: "Private Party @ Little Compton Estate",
       content: (
         <div className="slide">
           <iframe
             width="100%"
             height="315"
-            src="https://www.youtube.com/embed/sTfz5AxwBds"
+            src="https://www.youtube.com/embed/4OdZ_8zj7_E?si=vebumgAoKlGmQElq"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      ),
+    },
+    {
+      title: "Music Video for Jimrat",
+      content: (
+        <div className="slide">
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/-bFV0OHawTI?si=rWCMO6d7g1S2vn2K"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -59,7 +79,7 @@ export const Overview = () => {
     <div className="overview-container">
       <div className="left-side">
         <div className="overview-title">
-          <h1>Underground Event Consultancy</h1>
+          <h1>Underground Entertainment Consultancy</h1>
         </div>
         <div className="slider-container">
           <h3 className="slide-title">{slides[currentSlide].title}</h3>
