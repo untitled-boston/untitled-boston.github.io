@@ -2,20 +2,29 @@
   position: relative;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+
   color: white;
   box-sizing: border-box;
-  padding: 20px;
+  height: 100%;
+  gap: 40px;
+}
+
+.left-side {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .overview-title {
-  border: 2px solid gold;
+  border: 2px solid white;
   background-color: black;
   padding: 10px 20px;
-  border-radius: 10px;
-  box-shadow: 5px 5px 0px gold;
-  margin-bottom: 20px;
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .overview-title h1 {
@@ -25,12 +34,10 @@
 
 .slider-container {
   position: relative;
-  width: 80%;
-  max-width: 800px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   border: 2px solid white;
-  border-radius: 10px;
-  margin-bottom: 20px;
 }
 
 .slider {
@@ -39,13 +46,32 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  width: 100%;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.slide-title {
+  position: absolute;
+  font-size: 1.2rem;
+  color: white;
+  background-color: black;
+  bottom: 20px;
+  right: 20px;
+  margin: 0px;
+  padding: 10px 20px;
 }
 
 .slide img,
 .slide iframe {
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  object-fit: contain;
+  max-width: 100%;
 }
 
 .slider-button {
@@ -77,7 +103,7 @@
   background-color: black;
   border: 2px solid white;
   padding: 20px;
-  border-radius: 10px;
+
   text-align: center;
   font-size: 1.2rem;
 }
@@ -93,5 +119,9 @@
 
   .overview-content {
     font-size: 1rem;
+  }
+
+  .overview-container {
+    flex-direction: column;
   }
 }
