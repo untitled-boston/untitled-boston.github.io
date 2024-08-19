@@ -1,53 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../assets/css/Operations.css";
 
 export const Operations = () => {
   return (
     <div className="operations-container">
-      <div className="operations-content">
+      <div className="operations-cards">
         <div className="operations-point">
           <p>
-            Untitled operates with a <strong>dual-mode model</strong> designed
-            for scalability.
+            Struggling with <strong>connecting</strong> with Boston’s{" "}
+            <strong>largest</strong> demographic?
           </p>
         </div>
-        <div className="operations-split">
-          <div className="operations-half">
-            <p>
-              <strong>We Come to You</strong>:<br />
-              Partnering with businesses & venues to{" "}
-              <strong>increase foot traffic</strong> and{" "}
-              <strong>brand visibility</strong>.
-            </p>
-          </div>
-          <div className="operations-half">
-            <p>
-              <strong>You Come to Us</strong>:<br />
-              Providing a <strong>creative space</strong> to strengthen the{" "}
-              <strong>arts</strong>, <strong>fashion</strong>, and{" "}
-              <strong>music</strong> community of Boston.
-            </p>
-          </div>
+        <div className="operations-point">
+          <p>
+            Failing to make your brand <strong>memorable</strong>?
+          </p>
         </div>
-        <div className="operations-cards">
-          <div className="operations-point">
-            <p>
-              <strong>Strategic Partnerships</strong>:<br />
-              Collaborating with local startups to <strong>
-                expand reach
-              </strong>{" "}
-              and drive <strong>success</strong>.
-            </p>
-          </div>
-          <div className="operations-point">
-            <p>
-              <strong>Vision</strong>:<br />
-              Aspiring to create a <strong>cultural movement</strong> that{" "}
-              <strong>surpasses</strong> establishments like Boiler Room,
-              Insomniac, or Mischief.
-            </p>
-          </div>
-        </div>
+      </div>
+      <div className="operations-point">
+        <p>
+          We provide <strong>comprehensive consultation</strong> for any
+          experience, removing
+          <strong> barriers</strong> to entering the contemporary Boston scene.
+        </p>
+      </div>
+
+      <div className="operations-point">
+        <p>
+          We aim to make underground art, fashion, and music,{" "}
+          <strong>safe</strong> and <strong>accessible</strong> to everyone.
+        </p>
       </div>
     </div>
   );

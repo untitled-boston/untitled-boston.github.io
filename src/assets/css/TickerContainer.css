@@ -16,16 +16,22 @@
   height: 100% !important;
 }
 
-.ticker-container > div {
-  height: 100%;
-}
-
 .ticker-content {
   height: 100%;
   display: flex;
   align-items: center;
   padding: 0 10px;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.ticker-still {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
 }
 
 p {

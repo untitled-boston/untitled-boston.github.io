@@ -11,7 +11,7 @@ const App: React.FC = () => {
       <div className="background" />
       <StarAnimation />
       <div className="content-container">
-        <TickerContainer text="UNTITLED | Wonderland 9/7 | Stamina 9/13 | @UNTITLED.BOSTON | Select Markets 9/14 | Select Markets 4/12 |&nbsp;" />
+        <TickerContainer />
         <Sections />
       </div>
     </div>
