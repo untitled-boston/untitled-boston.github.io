@@ -139,6 +139,8 @@ export const Overview = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideInterval = useRef<number | null>(null);
   const progressBarRef = useRef<HTMLDivElement | null>(null);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   useEffect(() => {
     startAutoSlide();
@@ -220,6 +222,31 @@ export const Overview = () => {
     startAutoSlide(); // Reset interval when manually changing slides
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+
+    if (touchStartX.current - touchEndX.current > 50) {
+      // Swiped left
+      handleNext();
+    }
+
+    if (touchStartX.current - touchEndX.current < -50) {
+      // Swiped right
+      handlePrev();
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   return (
     <div className="overview-container">
       <div className="left-side">
@@ -232,6 +259,9 @@ export const Overview = () => {
             className="slider"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             <div
               className="slides"
@@ -260,7 +290,7 @@ export const Overview = () => {
           <div
             ref={progressBarRef}
             className="progress-bar"
-            style={{ animation: "progressBar 4s linear infinite" }}
+            style={{ animation: "progressBar 8s linear infinite" }}
           ></div>
         </div>
         <div className="dots-container">
