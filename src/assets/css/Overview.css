@@ -120,7 +120,7 @@
   height: 5px;
   background-color: white;
   width: 100%;
-  animation: progressBar 4s linear infinite;
+  animation: progressBar 8s linear infinite;
   animation-play-state: running; /* Default to running */
 }
 

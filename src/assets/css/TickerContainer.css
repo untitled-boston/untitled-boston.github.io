@@ -1,15 +1,14 @@
 .ticker-container {
   overflow: hidden;
   white-space: nowrap;
-  background-color: black; /* Background color of the ticker */
-  border: 2px solid white; /* Border around the ticker */
+  background-color: black;
+  border: 2px solid white;
   color: white;
-  position: relative;
   width: 95%;
-  position: relative;
   height: 50px;
   font-weight: bolder;
   z-index: 10;
+  position: relative;
 }
 
 .ticker,
@@ -17,11 +16,11 @@
   height: 100% !important;
 }
 
-.ticker__element {
+.ticker-content {
   display: flex;
   align-items: center;
-  padding: 0 10px; /* Add some padding to the text */
-  box-sizing: border-box; /* Include padding in element's width */
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 p {
@@ -31,6 +30,6 @@ p {
 
 @media (max-width: 768px) {
   .ticker-container {
-    font-size: 1rem; /* Adjust font size for mobile */
+    font-size: 1rem;
   }
 }

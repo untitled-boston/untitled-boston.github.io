@@ -8,11 +8,20 @@ interface TickerProps {
 
 const TickerContainer: React.FC<TickerProps> = ({ text }) => {
   const isMobile = window.innerWidth <= 768;
-  const speed = isMobile ? 5 : 10; // Slower speed on mobile
+
+  // Adjust speed based on text length to prevent overlap
+  const baseSpeed = isMobile ? 5 : 10;
+  const speed = Math.max(baseSpeed, Math.min(50, text.length / 2)); // Ensure speed is reasonable
 
   return (
     <div className="ticker-container">
-      <Ticker speed={speed}>{() => <p>{text}</p>}</Ticker>
+      <Ticker speed={speed}>
+        {() => (
+          <div className="ticker-content">
+            <p>{text}</p>
+          </div>
+        )}
+      </Ticker>
     </div>
   );
 };

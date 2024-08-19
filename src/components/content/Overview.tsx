@@ -153,7 +153,7 @@ export const Overview = () => {
     stopAutoSlide(); // Ensure no previous interval is running
     slideInterval.current = window.setInterval(() => {
       handleNext();
-    }, 400000000000); // Slide every 4 seconds
+    }, 8000); // Slide every 4 seconds
   };
 
   const stopAutoSlide = () => {
@@ -167,7 +167,7 @@ export const Overview = () => {
     if (progressBarRef.current) {
       progressBarRef.current.style.animation = "none";
       void progressBarRef.current.offsetWidth; // Trigger a reflow to restart the animation
-      progressBarRef.current.style.animation = "progressBar 4s linear infinite";
+      progressBarRef.current.style.animation = "progressBar 8s linear infinite";
     }
   };
 
