@@ -3,6 +3,27 @@ import "../../assets/css/Overview.css";
 
 const slides = [
   {
+    title: "",
+    content: (
+      <div className="overview-text">
+        Boston has a problem with fun.{" "}
+        <span style={{ fontWeight: "bolder" }}>We are the solution</span>
+        .
+        <br />
+        <br />
+        We work with artists both local and from afar. <br />
+        <br /> We creating experiences beyond genre and labels.
+        <br />
+        <br />
+        We are{" "}
+        <span style={{ fontWeight: "bolder", textDecoration: "underline" }}>
+          Untitled
+        </span>
+        .
+      </div>
+    ),
+  },
+  {
     title: "Gamerave @ Bear Cages",
     content: <img src="/assets/images/gamerave.jpg" alt="Gamerave Image" />,
   },
@@ -193,6 +214,12 @@ export const Overview = () => {
     resumeProgressBar(); // Resume the progress bar animation
   };
 
+  const goToSlide = (index: number) => {
+    pauseCurrentSlideVideo();
+    setCurrentSlide(index);
+    startAutoSlide(); // Reset interval when manually changing slides
+  };
+
   return (
     <div className="overview-container">
       <div className="left-side">
@@ -234,7 +261,16 @@ export const Overview = () => {
             ref={progressBarRef}
             className="progress-bar"
             style={{ animation: "progressBar 4s linear infinite" }}
-          ></div>
+          ></div>{" "}
+          <div className="dots-container">
+            {slides.map((_, index) => (
+              <span
+                key={index}
+                className={`dot ${currentSlide === index ? "active" : ""}`}
+                onClick={() => goToSlide(index)}
+              ></span>
+            ))}
+          </div>
         </div>
       </div>
     </div>

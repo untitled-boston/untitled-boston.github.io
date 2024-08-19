@@ -120,6 +120,41 @@
   animation-play-state: running; /* Default to running */
 }
 
+.overview-text {
+  height: 100%;
+  width: 100%;
+  padding: 40px 50px;
+  text-align: left;
+  font-size: 2rem;
+}
+
+.dots-container {
+  height: 40px;
+  width: calc(100% - 195px);
+
+  position: fixed;
+  text-align: center;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #717171;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: white;
+}
+
 @keyframes progressBar {
   0% {
     width: 0%;
@@ -130,6 +165,22 @@
 }
 
 @media (max-width: 768px) {
+  .dot {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+  }
+
+  .dots-container {
+    width: calc(100% - 85px);
+    align-items: flex-start;
+  }
+
+  .overview-text {
+    padding: 20px;
+    font-size: 0.8rem;
+  }
+
   .overview-container {
     margin-top: 0;
   }

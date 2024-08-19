@@ -3,7 +3,7 @@
   transition: opacity 1s ease-in-out;
   height: 100%;
   width: 100%;
-  padding: 20px;
+  padding: 40px;
   padding-top: 180px;
 }
 
@@ -13,6 +13,7 @@
 
 @media (max-width: 768px) {
   .fade-in {
+    padding: 20px;
     padding-top: 80px;
     padding-bottom: 20px;
   }
