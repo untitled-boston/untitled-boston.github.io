@@ -39,7 +39,7 @@ const characters: Character[] = [
   },
   {
     title: "Editor in Chief",
-    name: "Sacha Licholai",
+    name: "Slick Licholai",
     modelURL: "/assets/models/pony.glb",
     description:
       "An eclectic Tisch film student at NYU who decided to document the rise of Untitled.",
@@ -86,7 +86,7 @@ export const CharacterSelect: React.FC = () => {
               className="character-button"
               onClick={() => handleCharacterClick(character)}
             >
-              <p>{character.name}</p>
+              <p>{character.name.split(" ")[0]}</p>
             </button>
           ))}
           {djs.map((character, index) => (
@@ -95,7 +95,7 @@ export const CharacterSelect: React.FC = () => {
               className="character-button"
               onClick={() => handleCharacterClick(character)}
             >
-              <p>{character.name}</p>
+              <p>{character.name.split(" ")[0]}</p>
             </button>
           ))}
         </div>
@@ -109,7 +109,7 @@ export const CharacterSelect: React.FC = () => {
                 className="character-button"
                 onClick={() => handleCharacterClick(character)}
               >
-                <p>{character.name}</p>
+                <p>{character.name.split(" ")[0]}</p>
               </button>
             ))}
           </div>
@@ -121,7 +121,7 @@ export const CharacterSelect: React.FC = () => {
                 className="character-button"
                 onClick={() => handleCharacterClick(character)}
               >
-                <p>{character.name}</p>
+                <p>{character.name.split(" ")[0]}</p>
               </button>
             ))}
           </div>
