@@ -15,28 +15,27 @@ const characters: Character[] = [
     name: "Jeff D. Jeffries",
     modelURL: "/assets/models/robsquid.glb",
     description:
-      "Jeff has a decade of experience in event management and has led numerous successful projects across the country.",
-  },
-  {
-    title: "Chief Logistics Officer",
-    name: "Phi Bui",
-    modelURL: "/assets/models/veigar.glb",
-    description:
-      "Phi is a creative visionary with a deep understanding of the arts and a passion for bringing unique experiences to life.",
+      "An undergrad in Environment Science, a heart in Miami, and a soul in music, Jeff crafts his setlists like he writes legal documents, with fervor and passion.",
   },
   {
     title: "Creative Director",
     name: "Marcelo Escobar",
     modelURL: "/assets/models/piccolo.glb",
     description:
-      "Marcelo is an innovative artist with a passion for the underground scene and a knack for creating memorable visuals.",
+      "A Boston-born and raised designer, Marcelo just wants to share his unique vision with the world, while keeping it true to his roots.",
+  },
+  {
+    title: "Chief Logistics Officer",
+    name: "Phi Bui",
+    modelURL: "/assets/models/veigar.glb",
+    description:
+      "Someone has to make sure all of these ideas happen, that's Phi's job.",
   },
   {
     title: "Head of Public Relations",
     name: "Qad Muhammad",
     modelURL: "/assets/models/cat.glb",
-    description:
-      "Marcelo is an innovative artist with a passion for the underground scene and a knack for creating memorable visuals.",
+    description: "Simply put, Qad is Boston's premiere IT girl.",
   },
 ];
 
