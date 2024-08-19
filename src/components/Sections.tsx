@@ -630,13 +630,13 @@ const Sections: React.FC = () => {
           onClick={handleBottomLeft}
         >
           <div className="section-background"></div>
-          <p className="section-title">HOW WE OPERATE</p>
+          <p className="section-title">OUR MARKET</p>
 
           {
             renderContent(
               "bottom-left",
               "/assets/models/falcon.glb",
-              <Operations />
+              <Market />
             ) as ReactNode
           }
         </div>
@@ -648,13 +648,13 @@ const Sections: React.FC = () => {
           onClick={handleBottomMiddle}
         >
           <div className="section-background"></div>
-          <p className="section-title">OUR MARKET</p>
+          <p className="section-title">HOW WE OPERATE</p>
 
           {
             renderContent(
               "bottom-middle",
               "/assets/models/batwing.glb",
-              <Market />
+              <Operations />
             ) as ReactNode
           }
         </div>

@@ -44,19 +44,6 @@ const slides = [
     ),
   },
   {
-    title: "Asalto @ God's Country",
-    content: <img src="/assets/images/asalto.jpg" alt="Asalto Image" />,
-  },
-  {
-    title: "Asalto @ God's Country",
-    content: (
-      <video className="slide-video" controls width="100%" height="100%" loop>
-        <source src="/assets/video/asalto.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    ),
-  },
-  {
     title: "Rio Night w/ Baker Street Radio",
     content: <img src="/assets/images/rio.jpg" alt="Asalto Image" />,
   },
@@ -77,6 +64,19 @@ const slides = [
         height="100%"
         src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/jeffy-fucking-jeffries/jeff-jeffries-baker-street-rio-de-janeiro-22424&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
       ></iframe>
+    ),
+  },
+  {
+    title: "Asalto @ God's Country",
+    content: <img src="/assets/images/asalto.jpg" alt="Asalto Image" />,
+  },
+  {
+    title: "Asalto @ God's Country",
+    content: (
+      <video className="slide-video" controls width="100%" height="100%" loop>
+        <source src="/assets/video/asalto.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     ),
   },
   {
@@ -224,7 +224,7 @@ export const Overview = () => {
     <div className="overview-container">
       <div className="left-side">
         <div className="overview-title">
-          <h1>We Make Nights You Remember</h1>
+          <h1>EXPERIENCES YOU REMEMBER</h1>
         </div>
         <div className="slider-container">
           <h3 className="slide-title">{slides[currentSlide].title}</h3>
