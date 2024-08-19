@@ -261,16 +261,16 @@ export const Overview = () => {
             ref={progressBarRef}
             className="progress-bar"
             style={{ animation: "progressBar 4s linear infinite" }}
-          ></div>{" "}
-          <div className="dots-container">
-            {slides.map((_, index) => (
-              <span
-                key={index}
-                className={`dot ${currentSlide === index ? "active" : ""}`}
-                onClick={() => goToSlide(index)}
-              ></span>
-            ))}
-          </div>
+          ></div>
+        </div>
+        <div className="dots-container">
+          {slides.map((_, index) => (
+            <span
+              key={index}
+              className={`dot ${currentSlide === index ? "active" : ""}`}
+              onClick={() => goToSlide(index)}
+            ></span>
+          ))}
         </div>
       </div>
     </div>

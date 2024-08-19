@@ -2,12 +2,10 @@
   position: relative;
   width: 100%;
   display: flex;
-  flex-direction: row;
   margin-top: -20px;
   color: white;
   box-sizing: border-box;
   height: 100%;
-  gap: 40px;
 }
 
 .left-side {
@@ -15,7 +13,6 @@
   height: 100%s;
   display: flex;
   flex-direction: column;
-  gap: 40px;
 }
 
 .overview-title {
@@ -39,6 +36,7 @@
   height: 100%;
   overflow: hidden;
   border: 2px solid white;
+  margin-top: 20px;
 }
 
 .slider {
@@ -134,11 +132,10 @@
 
 .dots-container {
   height: 40px;
-  width: calc(100% - 195px);
-
-  position: fixed;
+  width: 100%;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: -40px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -169,15 +166,15 @@
 }
 
 @media (max-width: 768px) {
+  .dots-container {
+    margin-top: 10px;
+    margin-bottom: -10px;
+  }
+
   .dot {
     width: 8px;
     height: 8px;
     margin: 0 4px;
-  }
-
-  .dots-container {
-    width: calc(100% - 85px);
-    align-items: flex-start;
   }
 
   .overview-text {
@@ -205,9 +202,5 @@
     right: 0;
     font-size: 0.8rem;
     padding: 2px 6px;
-  }
-
-  .left-side {
-    gap: 20px;
   }
 }
