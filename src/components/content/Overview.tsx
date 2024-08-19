@@ -107,6 +107,10 @@ const slides = [
   },
   {
     title: "Party @ Underhill",
+    content: <img src="/assets/images/stan.jpg" alt="Jazz Image" />,
+  },
+  {
+    title: "Party @ Underhill",
     content: (
       <iframe
         width="100%"

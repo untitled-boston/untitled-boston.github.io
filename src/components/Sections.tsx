@@ -10,14 +10,19 @@ import { Overview } from "./content/Overview";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 const modelUrls = [
-  "/assets/models/tank.glb",
-  "/assets/models/hydra.glb",
-  "/assets/models/falcon.glb",
   "/assets/models/batwing.glb",
-  "/assets/models/warthog.glb",
-  "/assets/models/guy.glb",
-  "/assets/models/piccolo.glb",
   "/assets/models/cat.glb",
+  "/assets/models/falcon.glb",
+  "/assets/models/guy.glb",
+  "/assets/models/hyrdra.glb",
+  "/assets/models/man.glb",
+  "/assets/models/piccolo.glb",
+  "/assets/models/pony.glb",
+  "/assets/models/roblox.glb",
+  "/assets/models/robsquid.glb",
+  "/assets/models/tank.glb",
+  "/assets/models/veigar.glb",
+  "/assets/models/warthog.glb",
 ];
 
 type Sections =

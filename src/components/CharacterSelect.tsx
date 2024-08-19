@@ -15,7 +15,7 @@ const characters: Character[] = [
     name: "Jeff D. Jeffries",
     modelURL: "/assets/models/robsquid.glb",
     description:
-      "An undergrad in Environment Science, a heart in Miami, and a soul in music, Jeff crafts his setlists like he writes legal documents, with fervor and passion.",
+      "An undergrad in Environment Science, a heart in Miami, and a soul in music, Jeff exists with fervor and passion.",
   },
   {
     title: "Creative Director",
@@ -34,8 +34,36 @@ const characters: Character[] = [
   {
     title: "Head of Public Relations",
     name: "Qad Muhammad",
-    modelURL: "/assets/models/cat.glb",
+    modelURL: "/assets/models/roblox.glb",
     description: "Simply put, Qad is Boston's premiere IT girl.",
+  },
+  {
+    title: "Editor in Chief",
+    name: "Sacha Licholai",
+    modelURL: "/assets/models/pony.glb",
+    description:
+      "An eclectic Tisch film student at NYU who decided to document the rise of Untitled.",
+  },
+];
+
+const djs: Character[] = [
+  {
+    title: "Resident DJ",
+    name: "Betsy O'Reilly",
+    modelURL: "/assets/models/cat.glb",
+    description: "Untitled's very own super-villain.",
+  },
+  {
+    title: "Resident DJ",
+    name: "Stanley Joe",
+    modelURL: "/assets/models/guy.glb",
+    description: "Style, sleaze, swagger.",
+  },
+  {
+    title: "Resident DJ",
+    name: "Quique De La Cruz",
+    modelURL: "/assets/models/man.glb",
+    description: "Master of dance and good vibes.",
   },
 ];
 
@@ -50,17 +78,55 @@ export const CharacterSelect: React.FC = () => {
 
   return (
     <div className="character-select-container">
-      <div className="character-list">
-        {characters.map((character, index) => (
-          <button
-            key={index}
-            className="character-button"
-            onClick={() => handleCharacterClick(character)}
-          >
-            <p>{character.title}</p>
-          </button>
-        ))}
-      </div>
+      {window.innerWidth <= 768 ? (
+        <div className="character-list">
+          {characters.map((character, index) => (
+            <button
+              key={index}
+              className="character-button"
+              onClick={() => handleCharacterClick(character)}
+            >
+              <p>{character.name}</p>
+            </button>
+          ))}
+          {djs.map((character, index) => (
+            <button
+              key={index}
+              className="character-button"
+              onClick={() => handleCharacterClick(character)}
+            >
+              <p>{character.name}</p>
+            </button>
+          ))}
+        </div>
+      ) : (
+        <div className="characters">
+          <h1>Executives</h1>
+          <div className="character-list">
+            {characters.map((character, index) => (
+              <button
+                key={index}
+                className="character-button"
+                onClick={() => handleCharacterClick(character)}
+              >
+                <p>{character.name}</p>
+              </button>
+            ))}
+          </div>
+          <h1>Resident DJs</h1>
+          <div className="character-list">
+            {djs.map((character, index) => (
+              <button
+                key={index}
+                className="character-button"
+                onClick={() => handleCharacterClick(character)}
+              >
+                <p>{character.name}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
       <div className="character-info-container">
         <div className="character-info">
           <div className="front">
