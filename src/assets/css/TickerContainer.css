@@ -16,7 +16,12 @@
   height: 100% !important;
 }
 
+.ticker-container > div {
+  height: 100%;
+}
+
 .ticker-content {
+  height: 100%;
   display: flex;
   align-items: center;
   padding: 0 10px;

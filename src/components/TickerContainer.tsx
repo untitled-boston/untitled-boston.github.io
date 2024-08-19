@@ -1,5 +1,6 @@
 import React from "react";
 import "../assets/css/TickerContainer.css";
+import { HorizontalTicker } from "react-infinite-ticker";
 import Ticker from "react-ticker";
 
 interface TickerProps {
@@ -7,21 +8,23 @@ interface TickerProps {
 }
 
 const TickerContainer: React.FC<TickerProps> = ({ text }) => {
-  const isMobile = window.innerWidth <= 768;
-
-  // Adjust speed based on text length to prevent overlap
-  const baseSpeed = isMobile ? 5 : 10;
-  const speed = Math.max(baseSpeed, Math.min(50, text.length / 2)); // Ensure speed is reasonable
-
   return (
     <div className="ticker-container">
-      <Ticker speed={speed}>
-        {() => (
+      {window.innerWidth <= 768 ? (
+        <HorizontalTicker duration={10000}>
           <div className="ticker-content">
             <p>{text}</p>
           </div>
-        )}
-      </Ticker>
+        </HorizontalTicker>
+      ) : (
+        <Ticker speed={10}>
+          {() => (
+            <div className="ticker-content">
+              <p>{text}</p>
+            </div>
+          )}
+        </Ticker>
+      )}
     </div>
   );
 };
