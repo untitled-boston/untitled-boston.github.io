@@ -153,7 +153,7 @@ export const Overview = () => {
     stopAutoSlide(); // Ensure no previous interval is running
     slideInterval.current = window.setInterval(() => {
       handleNext();
-    }, 4000); // Slide every 4 seconds
+    }, 400000000000); // Slide every 4 seconds
   };
 
   const stopAutoSlide = () => {
