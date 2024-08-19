@@ -55,7 +55,7 @@ const djs: Character[] = [
   },
   {
     title: "Resident DJ",
-    name: "Stanley Joe",
+    name: "Stan Joe",
     modelURL: "/assets/models/guy.glb",
     description: "Style, sleaze, swagger.",
   },
