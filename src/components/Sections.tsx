@@ -666,7 +666,7 @@ const Sections: React.FC = () => {
           onClick={handleBottomRight}
         >
           <div className="section-background"></div>
-          <p className="section-title">TALK TO US</p>
+          <p className="section-title">FIND US</p>
 
           {
             renderContent(
