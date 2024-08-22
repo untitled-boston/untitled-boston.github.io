@@ -35,8 +35,8 @@
 }
 
 p {
-  margin: 0;
   user-select: none;
+  margin-left: 12px;
 }
 
 @media (max-width: 768px) {
