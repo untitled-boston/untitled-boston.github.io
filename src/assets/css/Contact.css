@@ -26,6 +26,7 @@
 
 .contact-button {
   width: 200px;
+  max-width: 20%;
   height: 100%;
   position: relative;
   background-color: black;
