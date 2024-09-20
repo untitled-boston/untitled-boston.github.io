@@ -124,4 +124,8 @@
     width: 90%;
     max-width: 100%;
   }
+
+  .contact-button p {
+    margin: 0;
+  }
 }
